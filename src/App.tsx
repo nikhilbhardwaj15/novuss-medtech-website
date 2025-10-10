@@ -95,15 +95,15 @@ function App() {
               </div>
               <h1 className="text-6xl md:text-7xl font-bold text-gray-800 mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
-                  Medical Innovation
+                  Is My Love
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#6B8E23] to-[#808000] bg-clip-text text-transparent">
-                  Redefined
+                  Minakshi
                 </span>
               </h1>
               <p className="text-gray-600 text-xl mb-10 leading-relaxed">
-                Delivering advanced hospital machinery and precision-engineered medical equipment that empower institutions with reliable performance, clinical accuracy, and innovation in patient care.
+                I absolutely Love her, she is the best. My gorgeous patootie baby.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-10 py-5 font-medium transition-all flex items-center space-x-3 group shadow-2xl shadow-[#6B8E23]/40">
