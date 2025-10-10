@@ -32,7 +32,7 @@ function App() {
       <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200 rounded-b-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src="/IMG_6810.png" alt="NOVUSS" className="h-10 sm:h-12 w-auto" />
+            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-10 sm:h-12 w-auto" />
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-gray-800 font-sans">NOVUSS</h1>
               <p className="text-xs text-gray-600 font-sans">MEDTECH INDUSTRIES</p>
@@ -95,15 +95,15 @@ function App() {
               </div>
               <h1 className="text-6xl md:text-7xl font-bold text-gray-800 mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
-                  Minakshi 
+                  Medical Innovation
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#6B8E23] to-[#808000] bg-clip-text text-transparent">
-                  Is My Love
+                  Redefined
                 </span>
               </h1>
               <p className="text-gray-600 text-xl mb-10 leading-relaxed">
-                I absolutely Love her, she is the best. My gorgeous patootie baby.
+                Delivering advanced hospital machinery and precision-engineered medical equipment that empower institutions with reliable performance, clinical accuracy, and innovation in patient care.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-10 py-5 font-medium transition-all flex items-center space-x-3 group shadow-2xl shadow-[#6B8E23]/40">
