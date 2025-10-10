@@ -95,11 +95,11 @@ function App() {
               </div>
               <h1 className="text-6xl md:text-7xl font-bold text-gray-800 mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
-                  Is My Love
+                  Minakshi 
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#6B8E23] to-[#808000] bg-clip-text text-transparent">
-                  Minakshi
+                  Is My Love
                 </span>
               </h1>
               <p className="text-gray-600 text-xl mb-10 leading-relaxed">
