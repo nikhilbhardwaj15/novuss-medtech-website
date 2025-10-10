@@ -32,7 +32,7 @@ function App() {
       <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200 rounded-b-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-10 sm:h-12 w-auto" />
+            <img src="/IMG_6810.png" alt="NOVUSS" className="h-10 sm:h-12 w-auto" />
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-gray-800 font-sans">NOVUSS</h1>
               <p className="text-xs text-gray-600 font-sans">MEDTECH INDUSTRIES</p>
