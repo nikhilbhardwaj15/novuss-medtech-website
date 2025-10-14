@@ -11,7 +11,7 @@ export default function Privacy() {
             <span className="text-gray-700 font-medium">Back to Home</span>
           </Link>
           <div className="flex items-center space-x-3">
-            <img src="/IMG_6810.png" alt="NOVUSS" className="h-10 w-auto" />
+            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-10 w-auto" />
             <div>
               <h1 className="text-xl font-bold text-gray-800">NOVUSS</h1>
               <p className="text-xs text-gray-600">MEDTECH INDUSTRIES</p>
