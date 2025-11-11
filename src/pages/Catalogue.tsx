@@ -1,4 +1,4 @@
-import { ArrowLeft, Download, FileText, Eye } from 'lucide-react';
+import { ArrowLeft, Download, FileText, Eye, Activity, Stethoscope, Shield, Users, Zap, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Catalogue() {
@@ -40,7 +40,7 @@ export default function Catalogue() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a 
-                    href="/Novuss_MedTech_Catalogue_web.pdf" 
+                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3 shadow-lg shadow-[#6B8E23]/30"
@@ -49,7 +49,7 @@ export default function Catalogue() {
                     <span>View Catalogue</span>
                   </a>
                   <a 
-                    href="/Novuss_MedTech_Catalogue_web.pdf" 
+                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
                     download="NOVUSS_MedTech_Catalogue.pdf"
                     className="border-2 border-[#6B8E23] hover:bg-[#6B8E23] hover:text-white text-[#6B8E23] px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3"
                   >
@@ -91,6 +91,121 @@ export default function Catalogue() {
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3">Easy Access</h3>
               <p className="text-gray-600">Download or view online for convenient access to our complete product information.</p>
+            </div>
+          </div>
+
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Product Categories</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
+                    <Activity className="w-10 h-10 text-[#6B8E23]" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Diagnostic Equipment</h3>
+                  <p className="text-gray-600 mb-4">Advanced diagnostic tools including ECG machines, ultrasound systems, and patient monitors.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#6B8E23] font-semibold">Multiple Models Available</span>
+                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      Inquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
+                    <Stethoscope className="w-10 h-10 text-[#6B8E23]" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Surgical Instruments</h3>
+                  <p className="text-gray-600 mb-4">Precision surgical tools, electrosurgical units, and operating room equipment.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#6B8E23] font-semibold">Professional Grade</span>
+                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      Inquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
+                    <Shield className="w-10 h-10 text-[#6B8E23]" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Laboratory Equipment</h3>
+                  <p className="text-gray-600 mb-4">Clinical analyzers, microscopes, centrifuges, and lab automation systems.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#6B8E23] font-semibold">High Precision</span>
+                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      Inquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
+                    <Users className="w-10 h-10 text-[#6B8E23]" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Patient Care Equipment</h3>
+                  <p className="text-gray-600 mb-4">Hospital beds, wheelchairs, patient lifts, and mobility assistance devices.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#6B8E23] font-semibold">Comfort & Safety</span>
+                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      Inquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
+                    <Zap className="w-10 h-10 text-[#6B8E23]" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Imaging Systems</h3>
+                  <p className="text-gray-600 mb-4">X-ray machines, MRI systems, CT scanners, and digital imaging solutions.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#6B8E23] font-semibold">Advanced Imaging</span>
+                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      Inquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
+                    <Cpu className="w-10 h-10 text-[#6B8E23]" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Life Support Systems</h3>
+                  <p className="text-gray-600 mb-4">Ventilators, defibrillators, anesthesia machines, and critical care monitors.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#6B8E23] font-semibold">Life Critical</span>
+                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      Inquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
