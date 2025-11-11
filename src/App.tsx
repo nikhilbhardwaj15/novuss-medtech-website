@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import Catalogue from './pages/Catalogue';
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -216,7 +217,7 @@ function HomePage() {
                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
                   Delivering certified hospital machines, diagnostic systems, laboratory instruments, and surgical supplies — fulfilling complete medical requirements with customized, on-demand solutions.
                 </p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
+                <Link to="/catalogue" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
                   <span>Discover More</span>
                   <ChevronRight className="w-5 h-5" />
                 </Link>
@@ -464,6 +465,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/catalogue" element={<Catalogue />} />
       </Routes>
     </Router>
   );
