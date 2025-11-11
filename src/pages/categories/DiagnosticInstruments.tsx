@@ -2,10 +2,19 @@ import { ArrowLeft, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function DiagnosticInstruments() {
-  const products = [
-    'Digital ECG Machine', '12-Channel ECG', 'Portable ECG', 'Holter Machine',
-    'Portable Patient Monitor', 'Mobile Patient Monitor Cart', 'Multi-Parameter Monitor', 'Vital Signs Monitor',
-    'Mercury BP Apparatus', 'Aneroid BP Apparatus', 'Digital BP Monitor', 'Glucometer', 'Digital Thermometer', 'Infrared Thermometer', 'Pulse Oximeter', 'Blood Cell Counter (Export Quality)'
+  const productCategories = [
+    {
+      title: 'ECG Machines',
+      products: ['Digital ECG Machine', '12-Channel ECG', 'Portable ECG', 'Holter Machine']
+    },
+    {
+      title: 'Patient Monitors',
+      products: ['Portable Patient Monitor', 'Mobile Patient Monitor Cart', 'Multi-Parameter Monitor', 'Vital Signs Monitor']
+    },
+    {
+      title: 'BP Apparatus & Basic Diagnostics',
+      products: ['Mercury BP Apparatus', 'Aneroid BP Apparatus', 'Digital BP Monitor', 'Glucometer', 'Digital Thermometer', 'Infrared Thermometer', 'Pulse Oximeter', 'Blood Cell Counter (Export Quality)']
+    }
   ];
 
   return (
@@ -36,17 +45,24 @@ export default function DiagnosticInstruments() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Activity className="w-6 h-6 text-[#6B8E23]" />
+          <div className="space-y-12">
+            {productCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {category.products.map((product, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
+                        <Activity className="w-6 h-6 text-[#6B8E23]" />
+                      </div>
+                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
+                      <p className="text-gray-600 text-sm mb-4">High-precision diagnostic instrument for accurate medical measurements.</p>
+                      <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
+                        Get Quote →
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                <p className="text-gray-600 text-sm mb-4">High-precision diagnostic instrument for accurate medical measurements.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Get Quote →
-                </Link>
               </div>
             ))}
           </div>

@@ -2,13 +2,31 @@ import { ArrowLeft, FlaskConical } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function LaboratoryEquipment() {
-  const products = [
-    'Digital Laboratory Centrifuge', 'High-speed / Micro Centrifuge', 'Refrigerated Centrifuge', 'Bench Top Centrifuge', 'Hematocrit Centrifuge', 'Ultracentrifuge',
-    'BOD Incubator', 'Hot Air Oven', 'Laboratory Incubator', 'Bacteriological Incubator',
-    'Digital Autoclave', 'Pre-Vacuum Autoclave', 'Vertical Autoclave', 'Portable Autoclave',
-    'Student Microscope', 'Binocular Microscope', 'Trinocular Microscope', 'Digital Microscope',
-    'Spectrophotometer', 'Colorimeter', 'pH Meter Digital (Portable)', 'Precision Electronic Balance',
-    'Analyzer Machines', 'Laboratory Glassware Set', 'Water Bath', 'Biosafety Cabinet', 'Hot Plate Stirrer', 'Vortex Shaker'
+  const productCategories = [
+    {
+      title: 'Centrifuge Machines',
+      products: ['Digital Laboratory Centrifuge', 'High-speed / Micro Centrifuge', 'Refrigerated Centrifuge', 'Bench Top Centrifuge', 'Hematocrit Centrifuge', 'Ultracentrifuge']
+    },
+    {
+      title: 'Incubators & Ovens',
+      products: ['BOD Incubator', 'Hot Air Oven', 'Laboratory Incubator', 'Bacteriological Incubator']
+    },
+    {
+      title: 'Autoclaves & Sterilizers',
+      products: ['Digital Autoclave', 'Pre-Vacuum Autoclave', 'Vertical Autoclave', 'Portable Autoclave']
+    },
+    {
+      title: 'Microscopes',
+      products: ['Student Microscope', 'Binocular Microscope', 'Trinocular Microscope', 'Digital Microscope']
+    },
+    {
+      title: 'Analytical Instruments',
+      products: ['Spectrophotometer', 'Colorimeter', 'pH Meter Digital (Portable)', 'Precision Electronic Balance']
+    },
+    {
+      title: 'General Lab Equipment',
+      products: ['Analyzer Machines', 'Laboratory Glassware Set', 'Water Bath', 'Biosafety Cabinet', 'Hot Plate Stirrer', 'Vortex Shaker']
+    }
   ];
 
   return (
@@ -39,17 +57,24 @@ export default function LaboratoryEquipment() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <FlaskConical className="w-6 h-6 text-[#6B8E23]" />
+          <div className="space-y-12">
+            {productCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {category.products.map((product, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
+                        <FlaskConical className="w-6 h-6 text-[#6B8E23]" />
+                      </div>
+                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
+                      <p className="text-gray-600 text-sm mb-4">Professional grade laboratory equipment with advanced features and reliability.</p>
+                      <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
+                        Get Quote →
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                <p className="text-gray-600 text-sm mb-4">Professional grade laboratory equipment with advanced features and reliability.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Get Quote →
-                </Link>
               </div>
             ))}
           </div>

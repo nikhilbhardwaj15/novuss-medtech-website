@@ -2,11 +2,23 @@ import { ArrowLeft, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function HospitalSupplies() {
-  const products = [
-    'Digital Weighing Scale', 'Mechanical Scale', 'Baby Weighing Scale', 'Physician Scale', 'Platform Scale', 'Body Composition Monitor',
-    'Stethoscope', 'Hospital Mattress and Linens', 'Wash Basin', 'Medical Trays',
-    'Oxygen Cylinder', 'Heavy Duty Cylinder Trolley', 'Double Cylinder Trolley', 'Flowmeter with Humidifier',
-    'Surgical Masks', 'ETT (Endotracheal Tube)', 'Surgical Gloves', 'Ventilator, Catheter, IV Sets'
+  const productCategories = [
+    {
+      title: 'Weighing & Measurement Equipment',
+      products: ['Digital Weighing Scale', 'Mechanical Scale', 'Baby Weighing Scale', 'Physician Scale', 'Platform Scale', 'Body Composition Monitor']
+    },
+    {
+      title: 'Basic Medical Supplies',
+      products: ['Stethoscope', 'Hospital Mattress and Linens', 'Wash Basin', 'Medical Trays']
+    },
+    {
+      title: 'Gas Cylinders & Storage',
+      products: ['Oxygen Cylinder', 'Heavy Duty Cylinder Trolley', 'Double Cylinder Trolley', 'Flowmeter with Humidifier']
+    },
+    {
+      title: 'Disposable Medical Items',
+      products: ['Surgical Masks', 'ETT (Endotracheal Tube)', 'Surgical Gloves', 'Ventilator, Catheter, IV Sets']
+    }
   ];
 
   return (
@@ -37,17 +49,24 @@ export default function HospitalSupplies() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Scale className="w-6 h-6 text-[#6B8E23]" />
+          <div className="space-y-12">
+            {productCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {category.products.map((product, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
+                        <Scale className="w-6 h-6 text-[#6B8E23]" />
+                      </div>
+                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
+                      <p className="text-gray-600 text-sm mb-4">Essential hospital supply for medical operations and patient care.</p>
+                      <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
+                        Get Quote →
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                <p className="text-gray-600 text-sm mb-4">Essential hospital supply for medical operations and patient care.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Get Quote →
-                </Link>
               </div>
             ))}
           </div>

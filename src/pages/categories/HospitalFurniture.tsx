@@ -2,10 +2,19 @@ import { ArrowLeft, Bed } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function HospitalFurniture() {
-  const products = [
-    'Manual Hospital Bed', 'Semi-Fowler Bed', 'Fowler Bed', 'ICU Bed',
-    'Bedside Locker', 'Overbed Table', 'Wheelchair', 'Stretcher',
-    'Modular OT Control Panel', 'Hospital Almirah', 'Dressing Trolley', 'Instrument Trolley', 'OT Table', 'OT Light', 'Examination Table', 'Collapsible Ambulance Stretcher'
+  const productCategories = [
+    {
+      title: 'Hospital Beds',
+      products: ['Manual Hospital Bed', 'Semi-Fowler Bed', 'Fowler Bed', 'ICU Bed']
+    },
+    {
+      title: 'Furniture & Mobility Equipment',
+      products: ['Bedside Locker', 'Overbed Table', 'Wheelchair', 'Stretcher']
+    },
+    {
+      title: 'Medical Trolleys & Infrastructure',
+      products: ['Modular OT Control Panel', 'Hospital Almirah', 'Dressing Trolley', 'Instrument Trolley', 'OT Table', 'OT Light', 'Examination Table', 'Collapsible Ambulance Stretcher']
+    }
   ];
 
   return (
@@ -36,17 +45,24 @@ export default function HospitalFurniture() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Bed className="w-6 h-6 text-[#6B8E23]" />
+          <div className="space-y-12">
+            {productCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {category.products.map((product, index) => (
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
+                        <Bed className="w-6 h-6 text-[#6B8E23]" />
+                      </div>
+                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
+                      <p className="text-gray-600 text-sm mb-4">High-quality hospital furniture designed for comfort and functionality.</p>
+                      <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
+                        Get Quote →
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                <p className="text-gray-600 text-sm mb-4">High-quality hospital furniture designed for comfort and functionality.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Get Quote →
-                </Link>
               </div>
             ))}
           </div>
