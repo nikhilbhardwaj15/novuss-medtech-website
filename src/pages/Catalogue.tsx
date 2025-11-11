@@ -110,7 +110,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Centrifuge machines, incubators, autoclaves, microscopes, spectrophotometers, and analytical instruments.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">50+ Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/laboratory-equipment" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -129,7 +129,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">ECG machines, patient monitors, BP apparatus, glucometers, thermometers, and pulse oximeters.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">20+ Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/diagnostic-instruments" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -148,7 +148,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Oxygen concentrators, BiPAP machines, CPAP machines, and ventilators for respiratory care.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">4 Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/respiratory-support" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -167,7 +167,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Hospital beds, wheelchairs, stretchers, OT tables, examination tables, and medical trolleys.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">15+ Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/hospital-furniture" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -186,7 +186,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Surgical clamps, retractors, scissors, forceps, orthopedic sets, ENT, ophthalmic, and dental equipment.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">30+ Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/surgical-instruments" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -205,7 +205,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Syringe pumps, infusion pumps, anesthesia workstations, and suction machines for critical care.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">4 Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/critical-care" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -224,7 +224,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Physics apparatus, chemistry lab equipment, biology lab equipment, and anatomical models for education.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">10+ Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/educational-equipment" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -243,7 +243,7 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Weighing scales, stethoscopes, oxygen cylinders, disposable medical items, and basic medical supplies.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">25+ Products</span>
-                    <Link to="/contact" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <Link to="/categories/hospital-supplies" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>

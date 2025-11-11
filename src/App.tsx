@@ -5,6 +5,14 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Catalogue from './pages/Catalogue';
+import LaboratoryEquipment from './pages/categories/LaboratoryEquipment';
+import DiagnosticInstruments from './pages/categories/DiagnosticInstruments';
+import SurgicalInstruments from './pages/categories/SurgicalInstruments';
+import HospitalFurniture from './pages/categories/HospitalFurniture';
+import RespiratorySupport from './pages/categories/RespiratorySupport';
+import CriticalCare from './pages/categories/CriticalCare';
+import EducationalEquipment from './pages/categories/EducationalEquipment';
+import HospitalSupplies from './pages/categories/HospitalSupplies';
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -466,6 +474,14 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/catalogue" element={<Catalogue />} />
+        <Route path="/categories/laboratory-equipment" element={<LaboratoryEquipment />} />
+        <Route path="/categories/diagnostic-instruments" element={<DiagnosticInstruments />} />
+        <Route path="/categories/surgical-instruments" element={<SurgicalInstruments />} />
+        <Route path="/categories/hospital-furniture" element={<HospitalFurniture />} />
+        <Route path="/categories/respiratory-support" element={<RespiratorySupport />} />
+        <Route path="/categories/critical-care" element={<CriticalCare />} />
+        <Route path="/categories/educational-equipment" element={<EducationalEquipment />} />
+        <Route path="/categories/hospital-supplies" element={<HospitalSupplies />} />
       </Routes>
     </Router>
   );
