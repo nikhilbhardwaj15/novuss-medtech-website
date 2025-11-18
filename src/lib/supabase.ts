@@ -1,6 +1,7 @@
-import { createClient } from '@supabase/supabase-js'
+// Supabase configuration disabled - using local storage instead
+// import { createClient } from '@supabase/supabase-js'
+// const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+// const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+// export const supabase = createClient(supabaseUrl, supabaseKey)
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'your-supabase-url'
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-supabase-anon-key'
-
-export const supabase = createClient(supabaseUrl, supabaseKey)
+export const supabase = null; // Placeholder

@@ -1,4 +1,4 @@
-import { Activity, Stethoscope, Shield, Users, Phone, Mail, MapPin, ChevronRight, Zap, Cpu, Gauge, Menu, X } from 'lucide-react';
+import { Activity, Stethoscope, Shield, ChevronRight, Zap, Cpu, Gauge, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 

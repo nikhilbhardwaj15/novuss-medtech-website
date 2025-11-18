@@ -1,11 +1,11 @@
-import { ArrowLeft, Download, FileText, Eye, Activity, Stethoscope, Shield, Users, Zap, Cpu, Microscope, Heart, Bed, Scissors, Scale, FlaskConical, Thermometer, Syringe, X, MessageCircle, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Download, FileText, Eye, Activity, FlaskConical, Shield, Microscope, X, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { supabase } from '../lib/supabase';
+// import { supabase } from '../lib/supabase';
 
 export default function Catalogue() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState('');
+
   const [formData, setFormData] = useState({
     productName: '',
     quantity: '',
@@ -16,34 +16,44 @@ export default function Catalogue() {
   });
 
   const handleGetQuote = (productName: string) => {
-    setSelectedProduct(productName);
     setFormData(prev => ({ ...prev, productName }));
     setShowQuoteModal(true);
   };
 
-  const handleSubmitQuote = async (e: React.FormEvent) => {
+  const handleSubmitQuote = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic form validation
+    if (!formData.name.trim() || !formData.phoneNumber.trim() || !formData.quantity.trim()) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
+    // Phone number validation
+    const phoneRegex = /^[+]?[0-9]{10,15}$/;
+    if (!phoneRegex.test(formData.phoneNumber.replace(/\s/g, ''))) {
+      alert('Please enter a valid phone number.');
+      return;
+    }
+    
+    // Email validation if provided
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    
     try {
-      const { error } = await supabase
-        .from('quote_requests')
-        .insert([
-          {
-            product_name: formData.productName,
-            quantity: formData.quantity,
-            phone_number: formData.phoneNumber,
-            name: formData.name,
-            email: formData.email,
-            note: formData.note,
-            created_at: new Date().toISOString()
-          }
-        ]);
-
-      if (error) {
-        console.error('Error submitting quote:', error);
-        alert('Error submitting quote. Please try again.');
-        return;
-      }
-
+      // Store quote request locally
+      const quoteRequest = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString()
+      };
+      
+      const existingQuotes = JSON.parse(localStorage.getItem('quoteRequests') || '[]');
+      existingQuotes.push(quoteRequest);
+      localStorage.setItem('quoteRequests', JSON.stringify(existingQuotes));
+      
       alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
       setShowQuoteModal(false);
       setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
@@ -158,9 +168,17 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Centrifuge machines, incubators, autoclaves, microscopes, spectrophotometers, and analytical instruments.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">50+ Products</span>
-                    <Link to="/categories/laboratory-equipment" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
-                      View All
-                    </Link>
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => handleGetQuote('Laboratory Equipment')}
+                        className="bg-[#6B8E23] text-white px-3 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm"
+                      >
+                        Quote
+                      </button>
+                      <Link to="/categories/laboratory-equipment" className="bg-gray-600 text-white px-3 py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm">
+                        View
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
