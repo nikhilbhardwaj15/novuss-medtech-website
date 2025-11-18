@@ -8,9 +8,7 @@ export default function EducationalEquipment() {
     productName: '',
     quantity: '',
     phoneNumber: '',
-    name: '',
-    email: '',
-    note: ''
+    name: ''
   });
 
   const handleGetQuote = (productName: string) => {
@@ -23,7 +21,10 @@ export default function EducationalEquipment() {
     console.log('Quote request:', formData);
     alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
     setShowQuoteModal(false);
-    setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
+    setFormData({ productName: '', quantity: '', phoneNumber: '', name: '' });
+    setTimeout(() => {
+      alert('Thank you, we will get back to you!');
+    }, 100);
   };
   const productCategories = [
     {
@@ -153,19 +154,6 @@ export default function EducationalEquipment() {
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
-                    placeholder="Enter your email (optional)"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Quantity *
                   </label>
                   <input
@@ -175,18 +163,6 @@ export default function EducationalEquipment() {
                     onChange={(e) => setFormData(prev => ({ ...prev, quantity: e.target.value }))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
                     placeholder="Enter quantity needed"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Additional Notes
-                  </label>
-                  <textarea
-                    value={formData.note}
-                    onChange={(e) => setFormData(prev => ({ ...prev, note: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent h-20 resize-none"
-                    placeholder="Any additional requirements or notes (optional)"
                   />
                 </div>
                 
