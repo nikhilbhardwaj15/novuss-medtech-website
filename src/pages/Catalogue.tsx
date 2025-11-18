@@ -100,10 +100,8 @@ export default function Catalogue() {
               
               {/* Laboratory Equipment */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <FlaskConical className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/laboratory-equipment.jpg" alt="Laboratory Equipment" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Laboratory Equipment</h3>
@@ -119,10 +117,8 @@ export default function Catalogue() {
 
               {/* Diagnostic Instruments */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Activity className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/diagnostic-instruments.jpg" alt="Diagnostic Instruments" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Diagnostic Instruments</h3>
@@ -138,10 +134,8 @@ export default function Catalogue() {
 
               {/* Respiratory Support Equipment */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Shield className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/respiratory-support.jpg" alt="Respiratory Support" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Respiratory Support</h3>
@@ -157,10 +151,8 @@ export default function Catalogue() {
 
               {/* Hospital Furniture & Infrastructure */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Bed className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/hospital-furniture.jpg" alt="Hospital Furniture" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Hospital Furniture</h3>
@@ -176,10 +168,8 @@ export default function Catalogue() {
 
               {/* Surgical & Specialized Instruments */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Scissors className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/surgical-instruments.jpg" alt="Surgical Instruments" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Surgical Instruments</h3>
@@ -195,10 +185,8 @@ export default function Catalogue() {
 
               {/* Critical Care Equipment */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Syringe className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/critical-care.jpg" alt="Critical Care Equipment" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Critical Care Equipment</h3>
@@ -214,10 +202,8 @@ export default function Catalogue() {
 
               {/* Educational & Research Equipment */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Microscope className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/educational-equipment.jpg" alt="Educational Equipment" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Educational Equipment</h3>
@@ -233,10 +219,8 @@ export default function Catalogue() {
 
               {/* General Hospital Utilities & Supplies */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                <div className="h-48 bg-gradient-to-br from-[#6B8E23]/10 to-[#6B8E23]/5 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center">
-                    <Scale className="w-10 h-10 text-[#6B8E23]" />
-                  </div>
+                <div className="h-48 overflow-hidden">
+                  <img src="/hospital-supplies.jpg" alt="Hospital Utilities & Supplies" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Hospital Utilities & Supplies</h3>
