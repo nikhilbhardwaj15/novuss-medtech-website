@@ -1,7 +1,30 @@
-import { ArrowLeft, FlaskConical } from 'lucide-react';
+import { ArrowLeft, FlaskConical, X, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function LaboratoryEquipment() {
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [formData, setFormData] = useState({
+    productName: '',
+    quantity: '',
+    phoneNumber: '',
+    name: '',
+    email: '',
+    note: ''
+  });
+
+  const handleGetQuote = (productName: string) => {
+    setFormData(prev => ({ ...prev, productName }));
+    setShowQuoteModal(true);
+  };
+
+  const handleSubmitQuote = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Quote request:', formData);
+    alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
+    setShowQuoteModal(false);
+    setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
+  };
   const productCategories = [
     {
       title: 'Centrifuge Machines',
@@ -69,9 +92,12 @@ export default function LaboratoryEquipment() {
                       </div>
                       <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
                       <p className="text-gray-600 text-sm mb-4">Professional grade laboratory equipment with advanced features and reliability.</p>
-                      <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
+                      <button 
+                        onClick={() => handleGetQuote(product)}
+                        className="text-[#6B8E23] font-semibold text-sm hover:underline"
+                      >
                         Get Quote →
-                      </Link>
+                      </button>
                     </div>
                   ))}
                 </div>
@@ -80,6 +106,129 @@ export default function LaboratoryEquipment() {
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      {showQuoteModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-gray-800">Get Quote</h3>
+                <button 
+                  onClick={() => setShowQuoteModal(false)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <form onSubmit={handleSubmitQuote} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Product Name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.productName}
+                    readOnly
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-600"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phoneNumber}
+                    onChange={(e) => setFormData(prev => ({ ...prev, phoneNumber: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter your WhatsApp number"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter your email (optional)"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Quantity *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.quantity}
+                    onChange={(e) => setFormData(prev => ({ ...prev, quantity: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter quantity needed"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Additional Notes
+                  </label>
+                  <textarea
+                    value={formData.note}
+                    onChange={(e) => setFormData(prev => ({ ...prev, note: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent h-20 resize-none"
+                    placeholder="Any additional requirements or notes (optional)"
+                  />
+                </div>
+                
+                <div className="flex space-x-3 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowQuoteModal(false)}
+                    className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="flex-1 px-4 py-2 bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Submit Quote</span>
+                  </button>
+                </div>
+              </form>
+              
+              <div className="mt-4 p-3 bg-green-50 rounded-lg">
+                <p className="text-sm text-green-700">
+                  📱 Our team will contact you via WhatsApp within 24 hours with a detailed quote.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
