@@ -168,17 +168,9 @@ export default function Catalogue() {
                   <p className="text-gray-600 mb-4">Centrifuge machines, incubators, autoclaves, microscopes, spectrophotometers, and analytical instruments.</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6B8E23] font-semibold">50+ Products</span>
-                    <div className="flex gap-2">
-                      <button 
-                        onClick={() => handleGetQuote('Laboratory Equipment')}
-                        className="bg-[#6B8E23] text-white px-3 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm"
-                      >
-                        Quote
-                      </button>
-                      <Link to="/categories/laboratory-equipment" className="bg-gray-600 text-white px-3 py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm">
-                        View
-                      </Link>
-                    </div>
+                    <Link to="/categories/laboratory-equipment" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                      View All
+                    </Link>
                   </div>
                 </div>
               </div>
