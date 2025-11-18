@@ -1,7 +1,33 @@
-import { ArrowLeft, Download, FileText, Eye, Activity, Stethoscope, Shield, Users, Zap, Cpu, Microscope, Heart, Bed, Scissors, Scale, FlaskConical, Thermometer, Syringe } from 'lucide-react';
+import { ArrowLeft, Download, FileText, Eye, Activity, Stethoscope, Shield, Users, Zap, Cpu, Microscope, Heart, Bed, Scissors, Scale, FlaskConical, Thermometer, Syringe, X, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Catalogue() {
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('');
+  const [formData, setFormData] = useState({
+    productName: '',
+    quantity: '',
+    phoneNumber: '',
+    name: '',
+    email: '',
+    note: ''
+  });
+
+  const handleGetQuote = (productName: string) => {
+    setSelectedProduct(productName);
+    setFormData(prev => ({ ...prev, productName }));
+    setShowQuoteModal(true);
+  };
+
+  const handleSubmitQuote = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the data to your backend/database
+    console.log('Quote request:', formData);
+    alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
+    setShowQuoteModal(false);
+    setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
+  };
   return (
     <div className="min-h-screen bg-white">
       <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
@@ -106,12 +132,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Laboratory Equipment</h3>
                   <p className="text-gray-600 mb-4">Centrifuge machines, incubators, autoclaves, microscopes, spectrophotometers, and analytical instruments.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">50+ Products</span>
                     <Link to="/categories/laboratory-equipment" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Laboratory Equipment')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -123,12 +156,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Diagnostic Instruments</h3>
                   <p className="text-gray-600 mb-4">ECG machines, patient monitors, BP apparatus, glucometers, thermometers, and pulse oximeters.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">20+ Products</span>
                     <Link to="/categories/diagnostic-instruments" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Diagnostic Instruments')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -140,12 +180,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Respiratory Support</h3>
                   <p className="text-gray-600 mb-4">Oxygen concentrators, BiPAP machines, CPAP machines, and ventilators for respiratory care.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">4 Products</span>
                     <Link to="/categories/respiratory-support" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Respiratory Support')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -157,12 +204,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Hospital Furniture</h3>
                   <p className="text-gray-600 mb-4">Hospital beds, wheelchairs, stretchers, OT tables, examination tables, and medical trolleys.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">15+ Products</span>
                     <Link to="/categories/hospital-furniture" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Hospital Furniture')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -174,12 +228,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Surgical Instruments</h3>
                   <p className="text-gray-600 mb-4">Surgical clamps, retractors, scissors, forceps, orthopedic sets, ENT, ophthalmic, and dental equipment.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">30+ Products</span>
                     <Link to="/categories/surgical-instruments" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Surgical Instruments')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -191,12 +252,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Critical Care Equipment</h3>
                   <p className="text-gray-600 mb-4">Syringe pumps, infusion pumps, anesthesia workstations, and suction machines for critical care.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">4 Products</span>
                     <Link to="/categories/critical-care" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Critical Care Equipment')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -208,12 +276,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Educational Equipment</h3>
                   <p className="text-gray-600 mb-4">Physics apparatus, chemistry lab equipment, biology lab equipment, and anatomical models for education.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">10+ Products</span>
                     <Link to="/categories/educational-equipment" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Educational Equipment')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -225,12 +300,19 @@ export default function Catalogue() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Hospital Utilities & Supplies</h3>
                   <p className="text-gray-600 mb-4">Weighing scales, stethoscopes, oxygen cylinders, disposable medical items, and basic medical supplies.</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[#6B8E23] font-semibold">25+ Products</span>
                     <Link to="/categories/hospital-supplies" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
+                  <button 
+                    onClick={() => handleGetQuote('Hospital Utilities & Supplies')}
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white py-2 rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Quote</span>
+                  </button>
                 </div>
               </div>
 
@@ -303,6 +385,129 @@ export default function Catalogue() {
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      {showQuoteModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-gray-800">Get Quote</h3>
+                <button 
+                  onClick={() => setShowQuoteModal(false)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <form onSubmit={handleSubmitQuote} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Product Category
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.productName}
+                    readOnly
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-600"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phoneNumber}
+                    onChange={(e) => setFormData(prev => ({ ...prev, phoneNumber: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter your WhatsApp number"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter your email (optional)"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Quantity *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.quantity}
+                    onChange={(e) => setFormData(prev => ({ ...prev, quantity: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
+                    placeholder="Enter quantity needed"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Additional Notes
+                  </label>
+                  <textarea
+                    value={formData.note}
+                    onChange={(e) => setFormData(prev => ({ ...prev, note: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent h-20 resize-none"
+                    placeholder="Any additional requirements or notes (optional)"
+                  />
+                </div>
+                
+                <div className="flex space-x-3 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowQuoteModal(false)}
+                    className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="flex-1 px-4 py-2 bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white rounded-lg hover:from-[#556B2F] hover:to-[#6B8E23] transition-all flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Submit Quote</span>
+                  </button>
+                </div>
+              </form>
+              
+              <div className="mt-4 p-3 bg-green-50 rounded-lg">
+                <p className="text-sm text-green-700">
+                  📱 Our team will contact you via WhatsApp within 24 hours with a detailed quote.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
