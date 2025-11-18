@@ -1,6 +1,7 @@
 import { ArrowLeft, Download, FileText, Eye, Activity, Stethoscope, Shield, Users, Zap, Cpu, Microscope, Heart, Bed, Scissors, Scale, FlaskConical, Thermometer, Syringe, X, MessageCircle, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { supabase } from '../lib/supabase';
 
 export default function Catalogue() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
@@ -22,11 +23,34 @@ export default function Catalogue() {
 
   const handleSubmitQuote = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend/database
-    console.log('Quote request:', formData);
-    alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
-    setShowQuoteModal(false);
-    setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
+    try {
+      const { error } = await supabase
+        .from('quote_requests')
+        .insert([
+          {
+            product_name: formData.productName,
+            quantity: formData.quantity,
+            phone_number: formData.phoneNumber,
+            name: formData.name,
+            email: formData.email,
+            note: formData.note,
+            created_at: new Date().toISOString()
+          }
+        ]);
+
+      if (error) {
+        console.error('Error submitting quote:', error);
+        alert('Error submitting quote. Please try again.');
+        return;
+      }
+
+      alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
+      setShowQuoteModal(false);
+      setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error submitting quote. Please try again.');
+    }
   };
   return (
     <div className="min-h-screen bg-white">
