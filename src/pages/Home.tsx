@@ -108,8 +108,8 @@ export default function Home() {
                 Delivering advanced hospital machinery and precision-engineered medical equipment that empower institutions with reliable performance, clinical accuracy, and innovation in patient care.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-10 py-5 font-medium transition-all flex items-center space-x-3 group shadow-2xl shadow-[#6B8E23]/40">
-                  <span>Explore Technology</span>
+                <Link to="/catalogue" className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-10 py-5 font-medium transition-all flex items-center space-x-3 group shadow-2xl shadow-[#6B8E23]/40">
+                  <span>Explore Catalogue</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link to="/contact" className="border-2 border-gray-300 hover:border-[#6B8E23]/60 hover:bg-[#6B8E23]/10 text-gray-800 px-10 py-5 font-medium transition-all backdrop-blur-sm">
