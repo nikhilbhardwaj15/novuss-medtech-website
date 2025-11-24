@@ -302,48 +302,161 @@ export default function Catalogue() {
             <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Featured Products</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Activity className="w-6 h-6 text-[#6B8E23]" />
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/Digital ECG.png" alt="Digital ECG Machine" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
                 </div>
-                <h4 className="font-bold text-gray-800 mb-2">Digital ECG Machine</h4>
-                <p className="text-gray-600 text-sm mb-3">12-channel ECG with digital display and printing capabilities.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Learn More →
-                </Link>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Digital ECG Machine</h4>
+                  <p className="text-gray-600 text-sm mb-3">12-channel ECG with digital display and printing capabilities.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Digital ECG Machine')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <FlaskConical className="w-6 h-6 text-[#6B8E23]" />
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/Digital laboratory centrifuge.png" alt="Digital Laboratory Centrifuge" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
                 </div>
-                <h4 className="font-bold text-gray-800 mb-2">Digital Laboratory Centrifuge</h4>
-                <p className="text-gray-600 text-sm mb-3">High-speed centrifuge with digital controls and safety features.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Learn More →
-                </Link>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Digital Laboratory Centrifuge</h4>
+                  <p className="text-gray-600 text-sm mb-3">High-speed centrifuge with digital controls and safety features.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Digital Laboratory Centrifuge')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-[#6B8E23]" />
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/Oxygen concentrator.png" alt="Oxygen Concentrator" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
                 </div>
-                <h4 className="font-bold text-gray-800 mb-2">Oxygen Concentrator</h4>
-                <p className="text-gray-600 text-sm mb-3">Portable oxygen concentrator for respiratory support therapy.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Learn More →
-                </Link>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Oxygen Concentrator</h4>
+                  <p className="text-gray-600 text-sm mb-3">Portable oxygen concentrator for respiratory support therapy.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Oxygen Concentrator')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Microscope className="w-6 h-6 text-[#6B8E23]" />
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/Binocular Microscope.png" alt="Binocular Microscope" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
                 </div>
-                <h4 className="font-bold text-gray-800 mb-2">Trinocular Microscope</h4>
-                <p className="text-gray-600 text-sm mb-3">Professional microscope with trinocular head for research and education.</p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold text-sm hover:underline">
-                  Learn More →
-                </Link>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Binocular Microscope</h4>
+                  <p className="text-gray-600 text-sm mb-3">Professional microscope with binocular head for research and education.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Binocular Microscope')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
+              </div>
+
+            </div>
+            
+            {/* Additional Featured Products Row */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+              
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/Multi Parameter Monitor.png" alt="Multi Parameter Monitor" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Multi Parameter Monitor</h4>
+                  <p className="text-gray-600 text-sm mb-3">Advanced patient monitoring system with multiple vital signs tracking.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Multi Parameter Monitor')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/pre-vacuum-autoclave.jpg" alt="Pre-Vacuum Autoclave" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Pre-Vacuum Autoclave</h4>
+                  <p className="text-gray-600 text-sm mb-3">High-efficiency sterilization system for medical instruments.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Pre-Vacuum Autoclave')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/littmann-classic-iii-stethoscope-.jpg" alt="Littmann Stethoscope" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Littmann Stethoscope</h4>
+                  <p className="text-gray-600 text-sm mb-3">Premium acoustic stethoscope for accurate cardiac auscultation.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Littmann Stethoscope')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/Ventilator.png" alt="Ventilator" className="w-full h-full object-contain bg-gray-50" />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-bold text-gray-800 mb-2">Medical Ventilator</h4>
+                  <p className="text-gray-600 text-sm mb-3">Advanced mechanical ventilator for critical care respiratory support.</p>
+                  <button 
+                    onClick={() => handleGetQuote('Medical Ventilator')}
+                    className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                  >
+                    Get Quote
+                  </button>
+                </div>
               </div>
 
             </div>
