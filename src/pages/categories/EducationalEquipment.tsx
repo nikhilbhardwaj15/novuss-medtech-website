@@ -31,8 +31,15 @@ export default function EducationalEquipment() {
       title: 'Physics Apparatus',
       products: [
         { name: 'Optics Equipment', image: '/Optics Equipment.jpg' },
+        { name: 'Electricity Apparatus', image: null },
         { name: 'Mechanics Equipment', image: '/Mechanics equipment.jpg' },
         { name: 'General Physics Set', image: '/General physics set.jpg' }
+      ]
+    },
+    {
+      title: 'Chemistry Lab Equipment',
+      products: [
+        { name: 'Micro Pipettes (Different Ranges)', image: '/Micro pipettes.jpg' }
       ]
     },
     {
@@ -80,7 +87,13 @@ export default function EducationalEquipment() {
                   {category.products.map((product, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
                       <div className="relative h-48 overflow-hidden">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        {product.image ? (
+                          <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        ) : (
+                          <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-16 w-auto opacity-30" />
+                          </div>
+                        )}
                         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
                           <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
                         </div>

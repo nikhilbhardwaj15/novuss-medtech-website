@@ -31,6 +31,7 @@ export default function LaboratoryEquipment() {
       title: 'Centrifuge Machines',
       products: [
         { name: 'Digital Laboratory Centrifuge', image: '/Digital laboratory centrifuge.png' },
+        { name: 'High-speed / Micro Centrifuge', image: null },
         { name: 'Refrigerated Centrifuge', image: '/refrigerated centrifuge.png' },
         { name: 'Bench Top Centrifuge', image: '/bench top centrifuge.png' },
         { name: 'Hematocrit Centrifuge', image: '/hematocrit centrifuge.png' },
@@ -52,7 +53,10 @@ export default function LaboratoryEquipment() {
     {
       title: 'Autoclaves & Sterilizers',
       products: [
-        { name: 'Pre-Vacuum Autoclave', image: '/pre-vacuum-autoclave.jpg' }
+        { name: 'Digital Autoclave', image: null },
+        { name: 'Pre-Vacuum Autoclave', image: '/pre-vacuum-autoclave.jpg' },
+        { name: 'Vertical Autoclave', image: null },
+        { name: 'Portable Autoclave', image: null }
       ]
     },
     {
@@ -60,6 +64,7 @@ export default function LaboratoryEquipment() {
       products: [
         { name: 'Student Microscope', image: '/Student microscope.png' },
         { name: 'Binocular Microscope', image: '/Binocular Microscope.png' },
+        { name: 'Trinocular Microscope', image: null },
         { name: 'Digital Microscope', image: '/Digital Microscope.png' }
       ]
     },
@@ -67,7 +72,8 @@ export default function LaboratoryEquipment() {
       title: 'Analytical Instruments',
       products: [
         { name: 'Spectrophotometer', image: '/Spectrophotometer.png' },
-        { name: 'pH Meter Digital', image: '/pHmeter.png' },
+        { name: 'Colorimeter', image: null },
+        { name: 'pH Meter Digital (Portable)', image: '/pHmeter.png' },
         { name: 'Precision Electronic Balance', image: '/Precision electronic Balance.png' },
         { name: 'Analyzer Machines', image: '/Analyzer Machines.png' }
       ]
@@ -122,7 +128,13 @@ export default function LaboratoryEquipment() {
                   {category.products.map((product, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
                       <div className="relative h-48 overflow-hidden">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        {product.image ? (
+                          <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        ) : (
+                          <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-16 w-auto opacity-30" />
+                          </div>
+                        )}
                         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
                           <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
                         </div>

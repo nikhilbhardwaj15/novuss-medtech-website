@@ -28,9 +28,9 @@ export default function RespiratorySupport() {
   };
   const products = [
     { name: 'Oxygen Concentrator', image: '/Oxygen concentrator.png' },
+    { name: 'BiPAP Machine', image: null },
     { name: 'CPAP Machine', image: '/Cpap.png' },
-    { name: 'Ventilator', image: '/Ventilator.png' },
-    { name: 'Suction Machine', image: '/Suction Machine.png' }
+    { name: 'Ventilator', image: '/Ventilator.png' }
   ];
 
   return (
@@ -65,7 +65,13 @@ export default function RespiratorySupport() {
             {products.map((product, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
                 <div className="relative h-48 overflow-hidden">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                  {product.image ? (
+                    <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                  ) : (
+                    <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                      <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-16 w-auto opacity-30" />
+                    </div>
+                  )}
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
                     <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
                   </div>

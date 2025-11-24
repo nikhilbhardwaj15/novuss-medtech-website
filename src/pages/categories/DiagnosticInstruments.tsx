@@ -31,6 +31,7 @@ export default function DiagnosticInstruments() {
       title: 'ECG Machines',
       products: [
         { name: 'Digital ECG Machine', image: '/Digital ECG.png' },
+        { name: '12-Channel ECG', image: null },
         { name: 'Portable ECG', image: '/Portable ECG.png' },
         { name: 'Holter Machine', image: '/Holter Machine.png' }
       ]
@@ -38,6 +39,8 @@ export default function DiagnosticInstruments() {
     {
       title: 'Patient Monitors',
       products: [
+        { name: 'Portable Patient Monitor', image: null },
+        { name: 'Mobile Patient Monitor Cart', image: null },
         { name: 'Multi-Parameter Monitor', image: '/Multi Parameter Monitor.png' },
         { name: 'Vital Signs Monitor', image: '/Vital signs monitor.png' }
       ]
@@ -45,12 +48,14 @@ export default function DiagnosticInstruments() {
     {
       title: 'BP Apparatus & Basic Diagnostics',
       products: [
+        { name: 'Mercury BP Apparatus', image: null },
         { name: 'Aneroid BP Apparatus', image: '/aneroid Bp.png' },
         { name: 'Digital BP Monitor', image: '/Digital bp monitor.png' },
+        { name: 'Glucometer', image: null },
         { name: 'Digital Thermometer', image: '/Digital thermometer.png' },
         { name: 'Infrared Thermometer', image: '/Infrared Thermometer.png' },
         { name: 'Pulse Oximeter', image: '/Pulse oximeter.png' },
-        { name: 'Blood Cell Counter', image: '/Blood cell counter.png' },
+        { name: 'Blood Cell Counter (Export Quality)', image: '/Blood cell counter.png' },
         { name: 'Sphygmomanometer', image: '/sphygmomanometer.png' }
       ]
     }
@@ -92,7 +97,13 @@ export default function DiagnosticInstruments() {
                   {category.products.map((product, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
                       <div className="relative h-48 overflow-hidden">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        {product.image ? (
+                          <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        ) : (
+                          <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-16 w-auto opacity-30" />
+                          </div>
+                        )}
                         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
                           <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
                         </div>

@@ -32,12 +32,14 @@ export default function HospitalFurniture() {
       products: [
         { name: 'Manual Hospital Bed', image: '/Manual Hospital bed.png' },
         { name: 'Semi-Fowler Bed', image: '/Semi-fowler bed.png' },
-        { name: 'Fowler Bed', image: '/Fowler bed.png' }
+        { name: 'Fowler Bed', image: '/Fowler bed.png' },
+        { name: 'ICU Bed', image: null }
       ]
     },
     {
       title: 'Furniture & Mobility Equipment',
       products: [
+        { name: 'Bedside Locker', image: null },
         { name: 'Overbed Table', image: '/Overbed Table.png' },
         { name: 'Wheelchair', image: '/Wheelchair.png' },
         { name: 'Stretcher', image: '/Stretcher.png' },
@@ -49,6 +51,12 @@ export default function HospitalFurniture() {
       products: [
         { name: 'Modular OT Control Panel', image: '/Modular OT control Panel.png' },
         { name: 'Hospital Almirah', image: '/Hospital Almirah.png' },
+        { name: 'Dressing Trolley', image: null },
+        { name: 'Instrument Trolley', image: null },
+        { name: 'OT Table', image: null },
+        { name: 'OT Light', image: null },
+        { name: 'Examination Table', image: null },
+        { name: 'Collapsible Ambulance Stretcher', image: null },
         { name: 'Medical Trays', image: '/Medical Trays.png' }
       ]
     }
@@ -90,7 +98,13 @@ export default function HospitalFurniture() {
                   {category.products.map((product, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
                       <div className="relative h-48 overflow-hidden">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        {product.image ? (
+                          <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        ) : (
+                          <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-16 w-auto opacity-30" />
+                          </div>
+                        )}
                         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
                           <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
                         </div>

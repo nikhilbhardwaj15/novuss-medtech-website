@@ -30,10 +30,12 @@ export default function SurgicalInstruments() {
     {
       title: 'Surgical Instruments & Sets',
       products: [
+        { name: 'Surgical Clamps', image: null },
         { name: 'Retractors', image: '/Retractors.png' },
         { name: 'Surgical Scissors', image: '/surgical scissors.png' },
         { name: 'Surgical Forceps', image: '/surgical forceps.png' },
         { name: 'Orthopedic Set', image: '/Orthopedic.png' },
+        { name: 'Gynecology Set', image: null },
         { name: 'General Surgical Set', image: '/General Surgical set.png' },
         { name: 'ENT Surgical Set', image: '/Ent surgical.png' },
         { name: 'Surgical Masks', image: '/Surgical masks.png' }
@@ -42,6 +44,8 @@ export default function SurgicalInstruments() {
     {
       title: 'ENT Equipment',
       products: [
+        { name: 'ENT Diagnostic Set', image: null },
+        { name: 'Otoscope', image: null },
         { name: 'Laryngoscope', image: '/Laryngoscope.png' },
         { name: 'ENT Examination Unit', image: '/Ent examination Unit.png' }
       ]
@@ -49,6 +53,7 @@ export default function SurgicalInstruments() {
     {
       title: 'Ophthalmic Equipment',
       products: [
+        { name: 'Ophthalmic Surgical Instruments', image: null },
         { name: 'Ophthalmic Equipment Station', image: '/Opthalmic Equipment Station.png' },
         { name: 'Ophthalmoscope', image: '/Opthalmoscope.png' },
         { name: 'Retinoscope', image: '/Retinoscope.png' }
@@ -58,7 +63,9 @@ export default function SurgicalInstruments() {
       title: 'Dental Equipment',
       products: [
         { name: 'Dental Chair', image: '/Dental Chair.png' },
-        { name: 'Ultrasonic Scaler', image: '/Ultrasonic Scaler.png' }
+        { name: 'Ultrasonic Scaler', image: '/Ultrasonic Scaler.png' },
+        { name: 'Micromotor', image: null },
+        { name: 'Dental Instrument Set', image: null }
       ]
     }
   ];
@@ -99,7 +106,13 @@ export default function SurgicalInstruments() {
                   {category.products.map((product, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
                       <div className="relative h-48 overflow-hidden">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        {product.image ? (
+                          <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        ) : (
+                          <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+                            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-16 w-auto opacity-30" />
+                          </div>
+                        )}
                         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
                           <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
                         </div>
