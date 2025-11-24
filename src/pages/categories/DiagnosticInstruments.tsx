@@ -29,15 +29,30 @@ export default function DiagnosticInstruments() {
   const productCategories = [
     {
       title: 'ECG Machines',
-      products: ['Digital ECG Machine', '12-Channel ECG', 'Portable ECG', 'Holter Machine']
+      products: [
+        { name: 'Digital ECG Machine', image: '/Digital ECG.png' },
+        { name: 'Portable ECG', image: '/Portable ECG.png' },
+        { name: 'Holter Machine', image: '/Holter Machine.png' }
+      ]
     },
     {
       title: 'Patient Monitors',
-      products: ['Portable Patient Monitor', 'Mobile Patient Monitor Cart', 'Multi-Parameter Monitor', 'Vital Signs Monitor']
+      products: [
+        { name: 'Multi-Parameter Monitor', image: '/Multi Parameter Monitor.png' },
+        { name: 'Vital Signs Monitor', image: '/Vital signs monitor.png' }
+      ]
     },
     {
       title: 'BP Apparatus & Basic Diagnostics',
-      products: ['Mercury BP Apparatus', 'Aneroid BP Apparatus', 'Digital BP Monitor', 'Glucometer', 'Digital Thermometer', 'Infrared Thermometer', 'Pulse Oximeter', 'Blood Cell Counter (Export Quality)']
+      products: [
+        { name: 'Aneroid BP Apparatus', image: '/aneroid Bp.png' },
+        { name: 'Digital BP Monitor', image: '/Digital bp monitor.png' },
+        { name: 'Digital Thermometer', image: '/Digital thermometer.png' },
+        { name: 'Infrared Thermometer', image: '/Infrared Thermometer.png' },
+        { name: 'Pulse Oximeter', image: '/Pulse oximeter.png' },
+        { name: 'Blood Cell Counter', image: '/Blood cell counter.png' },
+        { name: 'Sphygmomanometer', image: '/sphygmomanometer.png' }
+      ]
     }
   ];
 
@@ -75,18 +90,23 @@ export default function DiagnosticInstruments() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.products.map((product, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                        <Activity className="w-6 h-6 text-[#6B8E23]" />
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                      <div className="relative h-48 overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                          <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                        </div>
                       </div>
-                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                      <p className="text-gray-600 text-sm mb-4">High-precision diagnostic instrument for accurate medical measurements.</p>
-                      <button 
-                        onClick={() => handleGetQuote(product)}
-                        className="text-[#6B8E23] font-semibold text-sm hover:underline"
-                      >
-                        Get Quote →
-                      </button>
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
+                        <p className="text-gray-600 text-sm mb-3">High-precision diagnostic instrument for accurate medical measurements.</p>
+                        <button 
+                          onClick={() => handleGetQuote(product.name)}
+                          className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                        >
+                          Get Quote
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>

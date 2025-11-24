@@ -29,15 +29,28 @@ export default function HospitalFurniture() {
   const productCategories = [
     {
       title: 'Hospital Beds',
-      products: ['Manual Hospital Bed', 'Semi-Fowler Bed', 'Fowler Bed', 'ICU Bed']
+      products: [
+        { name: 'Manual Hospital Bed', image: '/Manual Hospital bed.png' },
+        { name: 'Semi-Fowler Bed', image: '/Semi-fowler bed.png' },
+        { name: 'Fowler Bed', image: '/Fowler bed.png' }
+      ]
     },
     {
       title: 'Furniture & Mobility Equipment',
-      products: ['Bedside Locker', 'Overbed Table', 'Wheelchair', 'Stretcher']
+      products: [
+        { name: 'Overbed Table', image: '/Overbed Table.png' },
+        { name: 'Wheelchair', image: '/Wheelchair.png' },
+        { name: 'Stretcher', image: '/Stretcher.png' },
+        { name: 'Wash Basin', image: '/Wash basin.jpg' }
+      ]
     },
     {
       title: 'Medical Trolleys & Infrastructure',
-      products: ['Modular OT Control Panel', 'Hospital Almirah', 'Dressing Trolley', 'Instrument Trolley', 'OT Table', 'OT Light', 'Examination Table', 'Collapsible Ambulance Stretcher']
+      products: [
+        { name: 'Modular OT Control Panel', image: '/Modular OT control Panel.png' },
+        { name: 'Hospital Almirah', image: '/Hospital Almirah.png' },
+        { name: 'Medical Trays', image: '/Medical Trays.png' }
+      ]
     }
   ];
 
@@ -75,18 +88,23 @@ export default function HospitalFurniture() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.products.map((product, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                        <Bed className="w-6 h-6 text-[#6B8E23]" />
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                      <div className="relative h-48 overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                          <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                        </div>
                       </div>
-                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                      <p className="text-gray-600 text-sm mb-4">High-quality hospital furniture designed for comfort and functionality.</p>
-                      <button 
-                        onClick={() => handleGetQuote(product)}
-                        className="text-[#6B8E23] font-semibold text-sm hover:underline"
-                      >
-                        Get Quote →
-                      </button>
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
+                        <p className="text-gray-600 text-sm mb-3">High-quality hospital furniture designed for comfort and functionality.</p>
+                        <button 
+                          onClick={() => handleGetQuote(product.name)}
+                          className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                        >
+                          Get Quote
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>

@@ -29,27 +29,60 @@ export default function LaboratoryEquipment() {
   const productCategories = [
     {
       title: 'Centrifuge Machines',
-      products: ['Digital Laboratory Centrifuge', 'High-speed / Micro Centrifuge', 'Refrigerated Centrifuge', 'Bench Top Centrifuge', 'Hematocrit Centrifuge', 'Ultracentrifuge']
+      products: [
+        { name: 'Digital Laboratory Centrifuge', image: '/Digital laboratory centrifuge.png' },
+        { name: 'Refrigerated Centrifuge', image: '/refrigerated centrifuge.png' },
+        { name: 'Bench Top Centrifuge', image: '/bench top centrifuge.png' },
+        { name: 'Hematocrit Centrifuge', image: '/hematocrit centrifuge.png' },
+        { name: 'Ultracentrifuge', image: '/Ultracentrifuge.png' }
+      ]
     },
     {
       title: 'Incubators & Ovens',
-      products: ['BOD Incubator', 'Hot Air Oven', 'Laboratory Incubator', 'Bacteriological Incubator']
+      products: [
+        { name: 'BOD Incubator', image: '/BOD incubator.png' },
+        { name: 'Hot Air Oven', image: '/Hot Air oven.png' },
+        { name: 'Laboratory Incubator', image: '/Laboratory Incubator.png' },
+        { name: 'Bacteriological Incubator', image: '/Bacteriological Incubator.png' },
+        { name: 'Digital Incubator', image: '/Digital Incubatror.png' },
+        { name: 'Vertical Incubators', image: '/Vertical incubators.png' },
+        { name: 'Portable Incubator', image: '/Portable incubator.png' }
+      ]
     },
     {
       title: 'Autoclaves & Sterilizers',
-      products: ['Digital Autoclave', 'Pre-Vacuum Autoclave', 'Vertical Autoclave', 'Portable Autoclave']
+      products: [
+        { name: 'Pre-Vacuum Autoclave', image: '/pre-vacuum-autoclave.jpg' }
+      ]
     },
     {
       title: 'Microscopes',
-      products: ['Student Microscope', 'Binocular Microscope', 'Trinocular Microscope', 'Digital Microscope']
+      products: [
+        { name: 'Student Microscope', image: '/Student microscope.png' },
+        { name: 'Binocular Microscope', image: '/Binocular Microscope.png' },
+        { name: 'Digital Microscope', image: '/Digital Microscope.png' }
+      ]
     },
     {
       title: 'Analytical Instruments',
-      products: ['Spectrophotometer', 'Colorimeter', 'pH Meter Digital (Portable)', 'Precision Electronic Balance']
+      products: [
+        { name: 'Spectrophotometer', image: '/Spectrophotometer.png' },
+        { name: 'pH Meter Digital', image: '/pHmeter.png' },
+        { name: 'Precision Electronic Balance', image: '/Precision electronic Balance.png' },
+        { name: 'Analyzer Machines', image: '/Analyzer Machines.png' }
+      ]
     },
     {
       title: 'General Lab Equipment',
-      products: ['Analyzer Machines', 'Laboratory Glassware Set', 'Water Bath', 'Biosafety Cabinet', 'Hot Plate Stirrer', 'Vortex Shaker']
+      products: [
+        { name: 'Laboratory Glassware Set', image: '/Lab glassware set.png' },
+        { name: 'Water Bath', image: '/Water bath.png' },
+        { name: 'Biosafety Cabinet', image: '/Biosafety Cabinet.png' },
+        { name: 'Hot Plate Stirrer', image: '/Hot plate stirrer.png' },
+        { name: 'Vortex Shaker', image: '/vortex shaker.png' },
+        { name: 'Calorimeter', image: '/Calorimeter.png' },
+        { name: 'Micro Pipettes', image: '/Micro pipettes.jpg' }
+      ]
     }
   ];
 
@@ -87,18 +120,23 @@ export default function LaboratoryEquipment() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.products.map((product, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                        <FlaskConical className="w-6 h-6 text-[#6B8E23]" />
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                      <div className="relative h-48 overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                          <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                        </div>
                       </div>
-                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                      <p className="text-gray-600 text-sm mb-4">Professional grade laboratory equipment with advanced features and reliability.</p>
-                      <button 
-                        onClick={() => handleGetQuote(product)}
-                        className="text-[#6B8E23] font-semibold text-sm hover:underline"
-                      >
-                        Get Quote →
-                      </button>
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
+                        <p className="text-gray-600 text-sm mb-3">Professional grade laboratory equipment with advanced features and reliability.</p>
+                        <button 
+                          onClick={() => handleGetQuote(product.name)}
+                          className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                        >
+                          Get Quote
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>

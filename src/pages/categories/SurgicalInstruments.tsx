@@ -29,19 +29,37 @@ export default function SurgicalInstruments() {
   const productCategories = [
     {
       title: 'Surgical Instruments & Sets',
-      products: ['Surgical Clamps', 'Retractors', 'Surgical Scissors', 'Surgical Forceps', 'Orthopedic Set', 'Gynecology Set', 'General Surgical Set', 'ENT Surgical Set']
+      products: [
+        { name: 'Retractors', image: '/Retractors.png' },
+        { name: 'Surgical Scissors', image: '/surgical scissors.png' },
+        { name: 'Surgical Forceps', image: '/surgical forceps.png' },
+        { name: 'Orthopedic Set', image: '/Orthopedic.png' },
+        { name: 'General Surgical Set', image: '/General Surgical set.png' },
+        { name: 'ENT Surgical Set', image: '/Ent surgical.png' },
+        { name: 'Surgical Masks', image: '/Surgical masks.png' }
+      ]
     },
     {
       title: 'ENT Equipment',
-      products: ['ENT Diagnostic Set', 'Otoscope', 'Laryngoscope', 'ENT Examination Unit']
+      products: [
+        { name: 'Laryngoscope', image: '/Laryngoscope.png' },
+        { name: 'ENT Examination Unit', image: '/Ent examination Unit.png' }
+      ]
     },
     {
       title: 'Ophthalmic Equipment',
-      products: ['Ophthalmic Surgical Instruments', 'Ophthalmic Equipment Station', 'Ophthalmoscope', 'Retinoscope']
+      products: [
+        { name: 'Ophthalmic Equipment Station', image: '/Opthalmic Equipment Station.png' },
+        { name: 'Ophthalmoscope', image: '/Opthalmoscope.png' },
+        { name: 'Retinoscope', image: '/Retinoscope.png' }
+      ]
     },
     {
       title: 'Dental Equipment',
-      products: ['Dental Chair', 'Ultrasonic Scaler', 'Micromotor', 'Dental Instrument Set']
+      products: [
+        { name: 'Dental Chair', image: '/Dental Chair.png' },
+        { name: 'Ultrasonic Scaler', image: '/Ultrasonic Scaler.png' }
+      ]
     }
   ];
 
@@ -79,18 +97,23 @@ export default function SurgicalInstruments() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.products.map((product, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                        <Scissors className="w-6 h-6 text-[#6B8E23]" />
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                      <div className="relative h-48 overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                          <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                        </div>
                       </div>
-                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                      <p className="text-gray-600 text-sm mb-4">Professional surgical instrument with precision engineering and durability.</p>
-                      <button 
-                        onClick={() => handleGetQuote(product)}
-                        className="text-[#6B8E23] font-semibold text-sm hover:underline"
-                      >
-                        Get Quote →
-                      </button>
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
+                        <p className="text-gray-600 text-sm mb-3">Professional surgical instrument with precision engineering and durability.</p>
+                        <button 
+                          onClick={() => handleGetQuote(product.name)}
+                          className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                        >
+                          Get Quote
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>

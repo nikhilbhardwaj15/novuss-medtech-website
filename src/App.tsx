@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Catalogue from './pages/Catalogue';
 import Brochure from './pages/Brochure';
+import BrochureDownload from './pages/BrochureDownload';
 import LaboratoryEquipment from './pages/categories/LaboratoryEquipment';
 import DiagnosticInstruments from './pages/categories/DiagnosticInstruments';
 import SurgicalInstruments from './pages/categories/SurgicalInstruments';
@@ -476,6 +477,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/catalogue" element={<Catalogue />} />
         <Route path="/brochure" element={<Brochure />} />
+        <Route path="/brochure-download" element={<BrochureDownload />} />
         <Route path="/categories/laboratory-equipment" element={<LaboratoryEquipment />} />
         <Route path="/categories/diagnostic-instruments" element={<DiagnosticInstruments />} />
         <Route path="/categories/surgical-instruments" element={<SurgicalInstruments />} />

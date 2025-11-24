@@ -29,19 +29,36 @@ export default function HospitalSupplies() {
   const productCategories = [
     {
       title: 'Weighing & Measurement Equipment',
-      products: ['Digital Weighing Scale', 'Mechanical Scale', 'Baby Weighing Scale', 'Physician Scale', 'Platform Scale', 'Body Composition Monitor']
+      products: [
+        { name: 'Digital Weighing Scale', image: '/Digital weighing scale.png' },
+        { name: 'Mechanical Scale', image: '/Mechanical Scale.png' },
+        { name: 'Baby Weighing Scale', image: '/Baby weighing scale.jpg' },
+        { name: 'Physical Scale', image: '/Physicial scale.jpg' },
+        { name: 'Platform Scale', image: '/Platform scale.jpg' },
+        { name: 'Body Composition Monitor', image: '/Body Composition Monitor.jpg' }
+      ]
     },
     {
       title: 'Basic Medical Supplies',
-      products: ['Stethoscope', 'Hospital Mattress and Linens', 'Wash Basin', 'Medical Trays']
+      products: [
+        { name: 'Littmann Stethoscope', image: '/littmann-classic-iii-stethoscope-.jpg' }
+      ]
     },
     {
       title: 'Gas Cylinders & Storage',
-      products: ['Oxygen Cylinder', 'Heavy Duty Cylinder Trolley', 'Double Cylinder Trolley', 'Flowmeter with Humidifier']
+      products: [
+        { name: 'Oxygen Cylinder', image: '/oxygen-cylinder.jpg' },
+        { name: 'Heavy Duty Cylinder Trolley', image: '/Heavy duty cylinder trolley.jpg' },
+        { name: 'Double Cylinder Trolley', image: '/Double cylinder trolley.jpg' },
+        { name: 'Flowmeter with Humidifier', image: '/Flowmeter with humidifier.jpg' }
+      ]
     },
     {
       title: 'Disposable Medical Items',
-      products: ['Surgical Masks', 'ETT (Endotracheal Tube)', 'Surgical Gloves', 'Ventilator, Catheter, IV Sets']
+      products: [
+        { name: 'ETT (Endotracheal Tube)', image: '/ETT.jpg' },
+        { name: 'Ventilator, Catheter, IV Sets', image: '/Ventilator, catheter, IV sets.png' }
+      ]
     }
   ];
 
@@ -79,18 +96,23 @@ export default function HospitalSupplies() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-[#6B8E23]/20 pb-4">{category.title}</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.products.map((product, index) => (
-                    <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-lg flex items-center justify-center mb-4">
-                        <Scale className="w-6 h-6 text-[#6B8E23]" />
+                    <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                      <div className="relative h-48 overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                          <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                        </div>
                       </div>
-                      <h3 className="font-bold text-gray-800 mb-2">{product}</h3>
-                      <p className="text-gray-600 text-sm mb-4">Essential hospital supply for medical operations and patient care.</p>
-                      <button 
-                        onClick={() => handleGetQuote(product)}
-                        className="text-[#6B8E23] font-semibold text-sm hover:underline"
-                      >
-                        Get Quote →
-                      </button>
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
+                        <p className="text-gray-600 text-sm mb-3">Essential hospital supply for medical operations and patient care.</p>
+                        <button 
+                          onClick={() => handleGetQuote(product.name)}
+                          className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                        >
+                          Get Quote
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
