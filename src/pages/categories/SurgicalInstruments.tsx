@@ -26,26 +26,52 @@ export default function SurgicalInstruments() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Surgical Clamps': 'Precision surgical clamps for hemostasis and tissue manipulation.',
+      'Retractors': 'Self-retaining and handheld retractors for surgical exposure.',
+      'Surgical Scissors': 'Sharp and blunt surgical scissors for cutting tissues and sutures.',
+      'Surgical Forceps': 'Tissue and dressing forceps with various tip configurations.',
+      'Orthopedic Set': 'Complete orthopedic instrument set for bone and joint surgeries.',
+      'Gynecology Set': 'Specialized gynecological instruments for obstetric and gynecologic procedures.',
+      'General Surgical Set': 'Basic surgical instrument set for general surgical procedures.',
+      'ENT Surgical Set': 'Specialized ENT instruments for ear, nose, and throat surgeries.',
+      'ENT Diagnostic Set': 'Diagnostic instruments for ENT examination and assessment.',
+      'Otoscope': 'Illuminated otoscope for ear canal and tympanic membrane examination.',
+      'Laryngoscope': 'Direct laryngoscope with multiple blade sizes for intubation.',
+      'ENT Examination Unit': 'Complete ENT workstation with integrated diagnostic equipment.',
+      'Ophthalmic Surgical Instruments': 'Microsurgical instruments for delicate eye surgeries.',
+      'Ophthalmic Equipment Station': 'Comprehensive ophthalmic examination and treatment unit.',
+      'Ophthalmoscope': 'Direct ophthalmoscope for retinal and fundus examination.',
+      'Retinoscope': 'Streak retinoscope for objective refraction measurement.',
+      'Dental Chair': 'Electric dental chair with integrated delivery system and lighting.',
+      'Ultrasonic Scaler': 'Ultrasonic dental scaler for plaque and calculus removal.',
+      'Micromotor': 'High-speed dental micromotor for precision drilling and polishing.',
+      'Dental Instrument Set': 'Complete dental examination and treatment instrument set.'
+    };
+    return descriptions[productName] || 'Professional surgical instrument with precision engineering and durability.';
+  };
   const productCategories = [
     {
       title: 'Surgical Instruments & Sets',
       products: [
-        { name: 'Surgical Clamps', image: null },
+        { name: 'Surgical Clamps', image: '/Surgical clamps.jpg' },
         { name: 'Retractors', image: '/Retractors.png' },
         { name: 'Surgical Scissors', image: '/surgical scissors.png' },
         { name: 'Surgical Forceps', image: '/surgical forceps.png' },
         { name: 'Orthopedic Set', image: '/Orthopedic.png' },
-        { name: 'Gynecology Set', image: null },
+        { name: 'Gynecology Set', image: '/Gynecology set.jpg' },
         { name: 'General Surgical Set', image: '/General Surgical set.png' },
         { name: 'ENT Surgical Set', image: '/Ent surgical.png' },
-        { name: 'Surgical Masks', image: '/Surgical masks.png' }
+
       ]
     },
     {
       title: 'ENT Equipment',
       products: [
-        { name: 'ENT Diagnostic Set', image: null },
-        { name: 'Otoscope', image: null },
+        { name: 'ENT Diagnostic Set', image: '/ENT Diagnostic Set.jpg' },
+        { name: 'Otoscope', image: '/Otoscope.jpg' },
         { name: 'Laryngoscope', image: '/Laryngoscope.png' },
         { name: 'ENT Examination Unit', image: '/Ent examination Unit.png' }
       ]
@@ -53,7 +79,7 @@ export default function SurgicalInstruments() {
     {
       title: 'Ophthalmic Equipment',
       products: [
-        { name: 'Ophthalmic Surgical Instruments', image: null },
+        { name: 'Ophthalmic Surgical Instruments', image: '/Ophthalmic Surgical Instruments.jpg' },
         { name: 'Ophthalmic Equipment Station', image: '/Opthalmic Equipment Station.png' },
         { name: 'Ophthalmoscope', image: '/Opthalmoscope.png' },
         { name: 'Retinoscope', image: '/Retinoscope.png' }
@@ -64,8 +90,8 @@ export default function SurgicalInstruments() {
       products: [
         { name: 'Dental Chair', image: '/Dental Chair.png' },
         { name: 'Ultrasonic Scaler', image: '/Ultrasonic Scaler.png' },
-        { name: 'Micromotor', image: null },
-        { name: 'Dental Instrument Set', image: null }
+        { name: 'Micromotor', image: '/Marathon-Micromotor.jpg' },
+        { name: 'Dental Instrument Set', image: '/Dental instrument sets.jpg' }
       ]
     }
   ];
@@ -119,7 +145,7 @@ export default function SurgicalInstruments() {
                       </div>
                       <div className="p-4">
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-3">Professional surgical instrument with precision engineering and durability.</p>
+                        <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                         <button 
                           onClick={() => handleGetQuote(product.name)}
                           className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

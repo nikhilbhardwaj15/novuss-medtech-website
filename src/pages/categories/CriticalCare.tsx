@@ -26,10 +26,20 @@ export default function CriticalCare() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Syringe Pump': 'Precision syringe pump for controlled medication delivery in ICU settings.',
+      'Infusion Pump': 'Volumetric infusion pump with multiple safety features and alarms.',
+      'Anesthesia Workstation': 'Complete anesthesia delivery system with ventilator and monitoring.',
+      'Suction Machine': 'Electric suction apparatus for airway clearance and surgical procedures.'
+    };
+    return descriptions[productName] || 'Critical care equipment for life-support and emergency medical procedures.';
+  };
   const products = [
-    { name: 'Syringe Pump', image: null },
-    { name: 'Infusion Pump', image: null },
-    { name: 'Anesthesia Workstation', image: null },
+    { name: 'Syringe Pump', image: '/output-onlinepngtools.png' },
+    { name: 'Infusion Pump', image: '/output-onlinepngtools.png' },
+    { name: 'Anesthesia Workstation', image: '/output-onlinepngtools.png' },
     { name: 'Suction Machine', image: '/Suction Machine.png' }
   ];
 
@@ -78,7 +88,7 @@ export default function CriticalCare() {
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                  <p className="text-gray-600 text-sm mb-3">Critical care equipment for life-support and emergency medical procedures.</p>
+                  <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                   <button 
                     onClick={() => handleGetQuote(product.name)}
                     className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

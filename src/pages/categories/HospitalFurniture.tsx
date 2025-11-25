@@ -26,6 +26,29 @@ export default function HospitalFurniture() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Manual Hospital Bed': 'Three-function manual hospital bed with adjustable height and backrest.',
+      'Semi-Fowler Bed': 'Two-section hospital bed with adjustable head and knee sections.',
+      'Fowler Bed': 'Multi-position hospital bed with electric controls for patient comfort.',
+      'ICU Bed': 'Advanced ICU bed with electronic controls and integrated monitoring systems.',
+      'Bedside Locker': 'Mobile bedside cabinet with storage compartments and overbed table.',
+      'Overbed Table': 'Height-adjustable overbed table with tilting top for patient meals and activities.',
+      'Wheelchair': 'Standard manual wheelchair with comfortable seating and easy maneuverability.',
+      'Stretcher': 'Emergency transport stretcher with adjustable height and safety rails.',
+      'Wash Basin': 'Stainless steel wash basin with faucet for patient hygiene needs.',
+      'Modular OT Control Panel': 'Ceiling-mounted OT control panel with gas outlets and electrical connections.',
+      'Hospital Almirah': 'Medical storage cabinet with multiple compartments for supplies and equipment.',
+      'Dressing Trolley': 'Mobile dressing trolley with multiple drawers for wound care supplies.',
+      'Instrument Trolley': 'Stainless steel instrument trolley with multiple shelves for surgical tools.',
+      'OT Table': 'Electric operating table with multiple positioning options and accessories.',
+      'OT Light': 'LED surgical light with shadowless illumination and adjustable intensity.',
+      'Examination Table': 'Adjustable examination table with paper roll holder and storage.',
+      'Collapsible Ambulance Stretcher': 'Lightweight collapsible stretcher for emergency medical services.'
+    };
+    return descriptions[productName] || 'High-quality hospital furniture designed for comfort and functionality.';
+  };
   const productCategories = [
     {
       title: 'Hospital Beds',
@@ -33,13 +56,13 @@ export default function HospitalFurniture() {
         { name: 'Manual Hospital Bed', image: '/Manual Hospital bed.png' },
         { name: 'Semi-Fowler Bed', image: '/Semi-fowler bed.png' },
         { name: 'Fowler Bed', image: '/Fowler bed.png' },
-        { name: 'ICU Bed', image: null }
+        { name: 'ICU Bed', image: '/ICU Bed.png' }
       ]
     },
     {
       title: 'Furniture & Mobility Equipment',
       products: [
-        { name: 'Bedside Locker', image: null },
+        { name: 'Bedside Locker', image: '/Bed-side Locker.png' },
         { name: 'Overbed Table', image: '/Overbed Table.png' },
         { name: 'Wheelchair', image: '/Wheelchair.png' },
         { name: 'Stretcher', image: '/Stretcher.png' },
@@ -51,13 +74,13 @@ export default function HospitalFurniture() {
       products: [
         { name: 'Modular OT Control Panel', image: '/Modular OT control Panel.png' },
         { name: 'Hospital Almirah', image: '/Hospital Almirah.png' },
-        { name: 'Dressing Trolley', image: null },
-        { name: 'Instrument Trolley', image: null },
-        { name: 'OT Table', image: null },
-        { name: 'OT Light', image: null },
-        { name: 'Examination Table', image: null },
-        { name: 'Collapsible Ambulance Stretcher', image: null },
-        { name: 'Medical Trays', image: '/Medical Trays.png' }
+        { name: 'Dressing Trolley', image: '/Dressing Trolley.jpg' },
+        { name: 'Instrument Trolley', image: '/Instrument Trolley.jpg' },
+        { name: 'OT Table', image: '/OT Table.jpg' },
+        { name: 'OT Light', image: '/OT Light.png' },
+        { name: 'Examination Table', image: '/Examination Table.jpg' },
+        { name: 'Collapsible Ambulance Stretcher', image: '/Collapsible Ambulance Sretcher.jpg' },
+
       ]
     }
   ];
@@ -111,7 +134,7 @@ export default function HospitalFurniture() {
                       </div>
                       <div className="p-4">
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-3">High-quality hospital furniture designed for comfort and functionality.</p>
+                        <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                         <button 
                           onClick={() => handleGetQuote(product.name)}
                           className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

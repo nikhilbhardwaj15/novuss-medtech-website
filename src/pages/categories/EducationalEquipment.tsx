@@ -26,12 +26,25 @@ export default function EducationalEquipment() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Optics Equipment': 'Complete optics kit with lenses, prisms, and light sources for physics education.',
+      'Electricity Apparatus': 'Electrical experiment kit with meters, circuits, and components for learning.',
+      'Mechanics Equipment': 'Mechanical physics apparatus for studying motion, force, and energy principles.',
+      'General Physics Set': 'Comprehensive physics laboratory equipment set for educational institutions.',
+      'Micro Pipettes (Different Ranges)': 'Variable volume micropipettes for chemistry and biology laboratory training.',
+      'Anatomical Models': 'Detailed anatomical models and charts for medical and biology education.',
+      'Biology Lab Equipment': 'Complete biology laboratory setup with specimens and experimental tools.'
+    };
+    return descriptions[productName] || 'Educational equipment for scientific learning and research applications.';
+  };
   const productCategories = [
     {
       title: 'Physics Apparatus',
       products: [
         { name: 'Optics Equipment', image: '/Optics Equipment.jpg' },
-        { name: 'Electricity Apparatus', image: null },
+        { name: 'Electricity Apparatus', image: '/Elecricity apparatus.png' },
         { name: 'Mechanics Equipment', image: '/Mechanics equipment.jpg' },
         { name: 'General Physics Set', image: '/General physics set.jpg' }
       ]
@@ -100,7 +113,7 @@ export default function EducationalEquipment() {
                       </div>
                       <div className="p-4">
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-3">Educational equipment for scientific learning and research applications.</p>
+                        <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                         <button 
                           onClick={() => handleGetQuote(product.name)}
                           className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

@@ -26,12 +26,35 @@ export default function DiagnosticInstruments() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Digital ECG Machine': '12-lead digital ECG with interpretation software and thermal printer.',
+      '12-Channel ECG': 'Multi-channel ECG machine with advanced arrhythmia detection.',
+      'Portable ECG': 'Lightweight portable ECG for bedside and emergency use.',
+      'Holter Machine': '24-hour ambulatory ECG monitor for continuous heart rhythm analysis.',
+      'Portable Patient Monitor': 'Compact vital signs monitor for patient transport and bedside monitoring.',
+      'Mobile Patient Monitor Cart': 'Mobile workstation with integrated patient monitoring system.',
+      'Multi-Parameter Monitor': 'Advanced monitor tracking ECG, SpO2, NIBP, temperature, and respiration.',
+      'Vital Signs Monitor': 'Essential vital signs monitoring with alarm management system.',
+      'Mercury BP Apparatus': 'Traditional mercury sphygmomanometer for accurate blood pressure measurement.',
+      'Aneroid BP Apparatus': 'Mechanical aneroid sphygmomanometer with calibrated gauge.',
+      'Digital BP Monitor': 'Automatic digital blood pressure monitor with memory function.',
+      'Glucometer': 'Blood glucose meter with test strips for diabetes monitoring.',
+      'Digital Thermometer': 'Fast-reading digital thermometer with fever alarm.',
+      'Infrared Thermometer': 'Non-contact infrared thermometer for quick temperature screening.',
+      'Pulse Oximeter': 'Fingertip pulse oximeter measuring oxygen saturation and pulse rate.',
+      'Blood Cell Counter (Export Quality)': 'Automated hematology analyzer for complete blood count testing.',
+      'Sphygmomanometer': 'Professional blood pressure measurement device with stethoscope.'
+    };
+    return descriptions[productName] || 'High-precision diagnostic instrument for accurate medical measurements.';
+  };
   const productCategories = [
     {
       title: 'ECG Machines',
       products: [
         { name: 'Digital ECG Machine', image: '/Digital ECG.png' },
-        { name: '12-Channel ECG', image: null },
+        { name: '12-Channel ECG', image: '/12-Channel ECG.png' },
         { name: 'Portable ECG', image: '/Portable ECG.png' },
         { name: 'Holter Machine', image: '/Holter Machine.png' }
       ]
@@ -39,8 +62,8 @@ export default function DiagnosticInstruments() {
     {
       title: 'Patient Monitors',
       products: [
-        { name: 'Portable Patient Monitor', image: null },
-        { name: 'Mobile Patient Monitor Cart', image: null },
+        { name: 'Portable Patient Monitor', image: '/Mobile Patient Monitor.jpg' },
+        { name: 'Mobile Patient Monitor Cart', image: '/Mobile Patient Monitor cart.png' },
         { name: 'Multi-Parameter Monitor', image: '/Multi Parameter Monitor.png' },
         { name: 'Vital Signs Monitor', image: '/Vital signs monitor.png' }
       ]
@@ -48,10 +71,10 @@ export default function DiagnosticInstruments() {
     {
       title: 'BP Apparatus & Basic Diagnostics',
       products: [
-        { name: 'Mercury BP Apparatus', image: null },
+        { name: 'Mercury BP Apparatus', image: '/sphygmomanometer.png' },
         { name: 'Aneroid BP Apparatus', image: '/aneroid Bp.png' },
         { name: 'Digital BP Monitor', image: '/Digital bp monitor.png' },
-        { name: 'Glucometer', image: null },
+        { name: 'Glucometer', image: '/Glucometer.jpg' },
         { name: 'Digital Thermometer', image: '/Digital thermometer.png' },
         { name: 'Infrared Thermometer', image: '/Infrared Thermometer.png' },
         { name: 'Pulse Oximeter', image: '/Pulse oximeter.png' },
@@ -110,7 +133,7 @@ export default function DiagnosticInstruments() {
                       </div>
                       <div className="p-4">
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-3">High-precision diagnostic instrument for accurate medical measurements.</p>
+                        <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                         <button 
                           onClick={() => handleGetQuote(product.name)}
                           className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

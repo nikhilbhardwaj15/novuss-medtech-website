@@ -26,9 +26,19 @@ export default function RespiratorySupport() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Oxygen Concentrator': 'Medical-grade oxygen concentrator delivering 90-95% pure oxygen continuously.',
+      'BiPAP Machine': 'Bi-level positive airway pressure device for sleep apnea and respiratory support.',
+      'CPAP Machine': 'Continuous positive airway pressure therapy for obstructive sleep apnea.',
+      'Ventilator': 'ICU ventilator with multiple ventilation modes for critical respiratory care.'
+    };
+    return descriptions[productName] || 'Advanced respiratory support equipment for critical patient care.';
+  };
   const products = [
     { name: 'Oxygen Concentrator', image: '/Oxygen concentrator.png' },
-    { name: 'BiPAP Machine', image: null },
+    { name: 'BiPAP Machine', image: '/BiPAP Machine.png' },
     { name: 'CPAP Machine', image: '/Cpap.png' },
     { name: 'Ventilator', image: '/Ventilator.png' }
   ];
@@ -78,7 +88,7 @@ export default function RespiratorySupport() {
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                  <p className="text-gray-600 text-sm mb-3">Advanced respiratory support equipment for critical patient care.</p>
+                  <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                   <button 
                     onClick={() => handleGetQuote(product.name)}
                     className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

@@ -26,12 +26,51 @@ export default function LaboratoryEquipment() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Digital Laboratory Centrifuge': 'High-speed digital centrifuge with programmable controls for precise sample separation.',
+      'High-speed / Micro Centrifuge': 'Compact microcentrifuge for small volume samples with variable speed control.',
+      'Refrigerated Centrifuge': 'Temperature-controlled centrifuge maintaining samples at 4°C during operation.',
+      'Bench Top Centrifuge': 'Reliable benchtop model for routine laboratory centrifugation needs.',
+      'Hematocrit Centrifuge': 'Specialized centrifuge for blood hematocrit testing with built-in reader.',
+      'Ultracentrifuge': 'High-performance ultracentrifuge for molecular biology and research applications.',
+      'BOD Incubator': 'Biochemical oxygen demand incubator for environmental and water testing.',
+      'Hot Air Oven': 'Dry heat sterilization oven with uniform temperature distribution.',
+      'Laboratory Incubator': 'Precision incubator for cell culture and bacterial growth applications.',
+      'Bacteriological Incubator': 'Specialized incubator for microbiology and bacteriological studies.',
+      'Digital Incubator': 'Microprocessor-controlled incubator with digital display and alarms.',
+      'Vertical Incubators': 'Space-saving vertical design incubator for limited laboratory space.',
+      'Portable Incubator': 'Compact portable incubator for field work and mobile laboratories.',
+      'Digital Autoclave': 'Automated steam sterilizer with digital controls and validation.',
+      'Pre-Vacuum Autoclave': 'Advanced autoclave with pre-vacuum cycle for enhanced sterilization.',
+      'Vertical Autoclave': 'Vertical loading autoclave ideal for tall instruments and glassware.',
+      'Portable Autoclave': 'Compact autoclave for small clinics and field sterilization needs.',
+      'Student Microscope': 'Educational microscope with LED illumination for student learning.',
+      'Binocular Microscope': 'Professional binocular microscope with superior optical clarity.',
+      'Trinocular Microscope': 'Research-grade trinocular microscope with camera port for documentation.',
+      'Digital Microscope': 'Digital microscope with built-in camera and LCD display.',
+      'Spectrophotometer': 'UV-Vis spectrophotometer for quantitative analysis and research.',
+      'Colorimeter': 'Digital colorimeter for color measurement and quality control.',
+      'pH Meter Digital (Portable)': 'Portable digital pH meter with automatic temperature compensation.',
+      'Precision Electronic Balance': 'High-precision analytical balance with internal calibration.',
+      'Analyzer Machines': 'Automated clinical analyzer for biochemistry and hematology testing.',
+      'Laboratory Glassware Set': 'Complete set of borosilicate glassware for laboratory experiments.',
+      'Water Bath': 'Circulating water bath with precise temperature control and uniformity.',
+      'Biosafety Cabinet': 'Class II biosafety cabinet for safe handling of biological materials.',
+      'Hot Plate Stirrer': 'Magnetic stirrer with heating plate for sample preparation.',
+      'Vortex Shaker': 'High-speed vortex mixer for sample mixing and homogenization.',
+      'Calorimeter': 'Bomb calorimeter for measuring heat of combustion and energy content.',
+      'Micro Pipettes': 'Variable volume micropipettes for precise liquid handling.'
+    };
+    return descriptions[productName] || 'Professional laboratory equipment with advanced features and reliability.';
+  };
   const productCategories = [
     {
       title: 'Centrifuge Machines',
       products: [
         { name: 'Digital Laboratory Centrifuge', image: '/Digital laboratory centrifuge.png' },
-        { name: 'High-speed / Micro Centrifuge', image: null },
+        { name: 'High-speed / Micro Centrifuge', image: '/High-speed Micro Centrifuge.jpg' },
         { name: 'Refrigerated Centrifuge', image: '/refrigerated centrifuge.png' },
         { name: 'Bench Top Centrifuge', image: '/bench top centrifuge.png' },
         { name: 'Hematocrit Centrifuge', image: '/hematocrit centrifuge.png' },
@@ -53,10 +92,10 @@ export default function LaboratoryEquipment() {
     {
       title: 'Autoclaves & Sterilizers',
       products: [
-        { name: 'Digital Autoclave', image: null },
+        { name: 'Digital Autoclave', image: '/Digital Autoclave.png' },
         { name: 'Pre-Vacuum Autoclave', image: '/pre-vacuum-autoclave.jpg' },
-        { name: 'Vertical Autoclave', image: null },
-        { name: 'Portable Autoclave', image: null }
+        { name: 'Vertical Autoclave', image: '/Vertical Autoclave.png' },
+        { name: 'Portable Autoclave', image: '/Portable Autoclave.png' }
       ]
     },
     {
@@ -64,7 +103,7 @@ export default function LaboratoryEquipment() {
       products: [
         { name: 'Student Microscope', image: '/Student microscope.png' },
         { name: 'Binocular Microscope', image: '/Binocular Microscope.png' },
-        { name: 'Trinocular Microscope', image: null },
+        { name: 'Trinocular Microscope', image: '/Trinocular microscope.jpg' },
         { name: 'Digital Microscope', image: '/Digital Microscope.png' }
       ]
     },
@@ -72,7 +111,7 @@ export default function LaboratoryEquipment() {
       title: 'Analytical Instruments',
       products: [
         { name: 'Spectrophotometer', image: '/Spectrophotometer.png' },
-        { name: 'Colorimeter', image: null },
+        { name: 'Colorimeter', image: '/Colorimeter.jpg' },
         { name: 'pH Meter Digital (Portable)', image: '/pHmeter.png' },
         { name: 'Precision Electronic Balance', image: '/Precision electronic Balance.png' },
         { name: 'Analyzer Machines', image: '/Analyzer Machines.png' }
@@ -141,7 +180,7 @@ export default function LaboratoryEquipment() {
                       </div>
                       <div className="p-4">
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-3">Professional grade laboratory equipment with advanced features and reliability.</p>
+                        <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                         <button 
                           onClick={() => handleGetQuote(product.name)}
                           className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"

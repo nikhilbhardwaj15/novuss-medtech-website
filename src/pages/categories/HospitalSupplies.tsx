@@ -26,6 +26,29 @@ export default function HospitalSupplies() {
       alert('Thank you, we will get back to you!');
     }, 100);
   };
+
+  const getProductDescription = (productName: string): string => {
+    const descriptions: { [key: string]: string } = {
+      'Digital Weighing Scale': 'High-precision digital scale with BMI calculation and memory function.',
+      'Mechanical Scale': 'Traditional beam balance scale for accurate weight measurement.',
+      'Baby Weighing Scale': 'Pediatric scale designed specifically for weighing infants and toddlers.',
+      'Physician Scale': 'Professional medical scale with height rod for clinical use.',
+      'Platform Scale': 'Heavy-duty platform scale for wheelchair and bariatric patients.',
+      'Body Composition Monitor': 'Advanced scale measuring weight, BMI, body fat, and muscle mass.',
+      'Stethoscope': 'High-quality acoustic stethoscope for cardiac and pulmonary auscultation.',
+      'Hospital Mattress and Linens': 'Medical-grade mattresses and linens with antimicrobial properties.',
+      'Medical Trays': 'Stainless steel medical trays for instrument organization and sterile procedures.',
+      'Oxygen Cylinder': 'Medical oxygen cylinder with regulator for respiratory therapy.',
+      'Heavy Duty Cylinder Trolley': 'Robust trolley for safe transport of large medical gas cylinders.',
+      'Double Cylinder Trolley': 'Mobile trolley designed to carry two oxygen cylinders simultaneously.',
+      'Flowmeter with Humidifier': 'Oxygen flowmeter with integrated humidifier for patient comfort.',
+      'Surgical Masks': 'Disposable surgical masks with bacterial filtration efficiency.',
+      'ETT (Endotracheal Tube)': 'Sterile endotracheal tubes for airway management and ventilation.',
+      'Surgical Gloves': 'Latex and nitrile surgical gloves for sterile procedures.',
+      'Ventilator, Catheter, IV Sets': 'Complete respiratory and IV therapy supply kit for patient care.'
+    };
+    return descriptions[productName] || 'Essential hospital supply for medical operations and patient care.';
+  };
   const productCategories = [
     {
       title: 'Weighing & Measurement Equipment',
@@ -42,8 +65,8 @@ export default function HospitalSupplies() {
       title: 'Basic Medical Supplies',
       products: [
         { name: 'Stethoscope', image: '/littmann-classic-iii-stethoscope-.jpg' },
-        { name: 'Hospital Mattress and Linens', image: null },
-        { name: 'Wash Basin', image: '/Wash basin.jpg' },
+        { name: 'Hospital Mattress and Linens', image: '/Hospital Mattress and Linens.jpg' },
+
         { name: 'Medical Trays', image: '/Medical Trays.png' }
       ]
     },
@@ -61,7 +84,7 @@ export default function HospitalSupplies() {
       products: [
         { name: 'Surgical Masks', image: '/Surgical masks.png' },
         { name: 'ETT (Endotracheal Tube)', image: '/ETT.jpg' },
-        { name: 'Surgical Gloves', image: null },
+        { name: 'Surgical Gloves', image: '/Surgical gloves.jpg' },
         { name: 'Ventilator, Catheter, IV Sets', image: '/Ventilator, catheter, IV sets.png' }
       ]
     }
@@ -116,7 +139,7 @@ export default function HospitalSupplies() {
                       </div>
                       <div className="p-4">
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-sm mb-3">Essential hospital supply for medical operations and patient care.</p>
+                        <p className="text-gray-600 text-sm mb-3">{getProductDescription(product.name)}</p>
                         <button 
                           onClick={() => handleGetQuote(product.name)}
                           className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
