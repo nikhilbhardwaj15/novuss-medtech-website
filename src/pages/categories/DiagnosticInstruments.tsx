@@ -37,7 +37,7 @@ export default function DiagnosticInstruments() {
       'Mobile Patient Monitor Cart': 'Mobile workstation with integrated patient monitoring system.',
       'Multi-Parameter Monitor': 'Advanced monitor tracking ECG, SpO2, NIBP, temperature, and respiration.',
       'Vital Signs Monitor': 'Essential vital signs monitoring with alarm management system.',
-      'Mercury BP Apparatus': 'Traditional mercury sphygmomanometer for accurate blood pressure measurement.',
+      'Digital Sphygmomanometer (Mercury-free)': 'Digital mercury-free sphygmomanometer with LCD display and memory function.',
       'Aneroid BP Apparatus': 'Mechanical aneroid sphygmomanometer with calibrated gauge.',
       'Digital BP Monitor': 'Automatic digital blood pressure monitor with memory function.',
       'Glucometer': 'Blood glucose meter with test strips for diabetes monitoring.',
@@ -45,7 +45,7 @@ export default function DiagnosticInstruments() {
       'Infrared Thermometer': 'Non-contact infrared thermometer for quick temperature screening.',
       'Pulse Oximeter': 'Fingertip pulse oximeter measuring oxygen saturation and pulse rate.',
       'Blood Cell Counter (Export Quality)': 'Automated hematology analyzer for complete blood count testing.',
-      'Sphygmomanometer': 'Professional blood pressure measurement device with stethoscope.'
+
     };
     return descriptions[productName] || 'High-precision diagnostic instrument for accurate medical measurements.';
   };
@@ -63,7 +63,7 @@ export default function DiagnosticInstruments() {
       title: 'Patient Monitors',
       products: [
         { name: 'Portable Patient Monitor', image: '/Mobile Patient Monitor.jpg' },
-        { name: 'Mobile Patient Monitor Cart', image: '/Mobile Patient Monitor cart.png' },
+        { name: 'Mobile Patient Monitor Cart', image: '/Mobile Patient Monitor cart.jpg' },
         { name: 'Multi-Parameter Monitor', image: '/Multi Parameter Monitor.png' },
         { name: 'Vital Signs Monitor', image: '/Vital signs monitor.png' }
       ]
@@ -71,7 +71,7 @@ export default function DiagnosticInstruments() {
     {
       title: 'BP Apparatus & Basic Diagnostics',
       products: [
-        { name: 'Mercury BP Apparatus', image: '/sphygmomanometer.png' },
+        { name: 'Digital Sphygmomanometer (Mercury-free)', image: '/sphygmomanometer.png' },
         { name: 'Aneroid BP Apparatus', image: '/aneroid Bp.png' },
         { name: 'Digital BP Monitor', image: '/Digital bp monitor.png' },
         { name: 'Glucometer', image: '/Glucometer.jpg' },
@@ -79,7 +79,7 @@ export default function DiagnosticInstruments() {
         { name: 'Infrared Thermometer', image: '/Infrared Thermometer.png' },
         { name: 'Pulse Oximeter', image: '/Pulse oximeter.png' },
         { name: 'Blood Cell Counter (Export Quality)', image: '/Blood cell counter.png' },
-        { name: 'Sphygmomanometer', image: '/sphygmomanometer.png' }
+
       ]
     }
   ];

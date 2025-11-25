@@ -62,7 +62,7 @@ export default function HospitalFurniture() {
     {
       title: 'Furniture & Mobility Equipment',
       products: [
-        { name: 'Bedside Locker', image: '/Bed-side Locker.png' },
+        { name: 'Bedside Locker', image: '/Bed-side locker.png' },
         { name: 'Overbed Table', image: '/Overbed Table.png' },
         { name: 'Wheelchair', image: '/Wheelchair.png' },
         { name: 'Stretcher', image: '/Stretcher.png' },

@@ -92,8 +92,8 @@ export default function LaboratoryEquipment() {
     {
       title: 'Autoclaves & Sterilizers',
       products: [
-        { name: 'Digital Autoclave', image: '/Digital Autoclave.png' },
         { name: 'Pre-Vacuum Autoclave', image: '/pre-vacuum-autoclave.jpg' },
+        { name: 'Digital Autoclave', image: '/Digital Autoclave.png' },
         { name: 'Vertical Autoclave', image: '/Vertical Autoclave.png' },
         { name: 'Portable Autoclave', image: '/Portable Autoclave.png' }
       ]

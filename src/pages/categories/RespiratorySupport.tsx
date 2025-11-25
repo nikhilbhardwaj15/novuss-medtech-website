@@ -38,7 +38,7 @@ export default function RespiratorySupport() {
   };
   const products = [
     { name: 'Oxygen Concentrator', image: '/Oxygen concentrator.png' },
-    { name: 'BiPAP Machine', image: '/BiPAP Machine.png' },
+    { name: 'BiPAP Machine', image: '/BiPAP Machine.jpg' },
     { name: 'CPAP Machine', image: '/Cpap.png' },
     { name: 'Ventilator', image: '/Ventilator.png' }
   ];
