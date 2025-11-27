@@ -83,10 +83,7 @@ export default function LaboratoryEquipment() {
         { name: 'BOD Incubator', image: '/BOD incubator.png' },
         { name: 'Hot Air Oven', image: '/Hot Air oven.png' },
         { name: 'Laboratory Incubator', image: '/Laboratory Incubator.png' },
-        { name: 'Bacteriological Incubator', image: '/Bacteriological Incubator.png' },
-        { name: 'Digital Incubator', image: '/Digital Incubatror.png' },
-        { name: 'Vertical Incubators', image: '/Vertical incubators.png' },
-        { name: 'Portable Incubator', image: '/Portable incubator.png' }
+        { name: 'Bacteriological Incubator', image: '/Bacteriological Incubator.png' }
       ]
     },
     {
