@@ -15,6 +15,8 @@ import RespiratorySupport from './pages/categories/RespiratorySupport';
 import CriticalCare from './pages/categories/CriticalCare';
 import EducationalEquipment from './pages/categories/EducationalEquipment';
 import HospitalSupplies from './pages/categories/HospitalSupplies';
+import ScheduleDemo from './pages/ScheduleDemo';
+import RentalLeasing from './pages/RentalLeasing';
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -125,7 +127,7 @@ function HomePage() {
                   <span>Download Catalogue</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/contact" className="border-2 border-gray-300 hover:border-[#6B8E23]/60 hover:bg-[#6B8E23]/10 text-gray-800 px-10 py-5 font-medium transition-all backdrop-blur-sm">
+                <Link to="/schedule-demo" className="border-2 border-gray-300 hover:border-[#6B8E23]/60 hover:bg-[#6B8E23]/10 text-gray-800 px-10 py-5 font-medium transition-all backdrop-blur-sm">
                   Schedule Demo
                 </Link>
               </div>
@@ -271,7 +273,7 @@ function HomePage() {
                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
                   We provide short-term/ long-term rentals of some specific medical machines for general use as well, each unit fully serviced, quality-tested, and ready for safe, flexible operation.
                 </p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
+                <Link to="/rental-leasing" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
                   <span>Explore Rentals</span>
                   <ChevronRight className="w-5 h-5" />
                 </Link>
@@ -486,6 +488,8 @@ function App() {
         <Route path="/categories/critical-care" element={<CriticalCare />} />
         <Route path="/categories/educational-equipment" element={<EducationalEquipment />} />
         <Route path="/categories/hospital-supplies" element={<HospitalSupplies />} />
+        <Route path="/schedule-demo" element={<ScheduleDemo />} />
+        <Route path="/rental-leasing" element={<RentalLeasing />} />
       </Routes>
     </Router>
   );

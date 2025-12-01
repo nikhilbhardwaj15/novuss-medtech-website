@@ -90,45 +90,7 @@ export default function Catalogue() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-8 rounded-2xl border border-gray-200 mb-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">NOVUSS MedTech Catalogue</h2>
-                <p className="text-gray-600 text-lg mb-6">
-                  Our comprehensive catalogue features the latest medical equipment, diagnostic systems, 
-                  and healthcare solutions designed to meet the evolving needs of modern healthcare facilities.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3 shadow-lg shadow-[#6B8E23]/30"
-                  >
-                    <Eye className="w-5 h-5" />
-                    <span>View Catalogue</span>
-                  </a>
-                  <a 
-                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
-                    download="NOVUSS_MedTech_Catalogue.pdf"
-                    className="border-2 border-[#6B8E23] hover:bg-[#6B8E23] hover:text-white text-[#6B8E23] px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3"
-                  >
-                    <Download className="w-5 h-5" />
-                    <span>Download PDF</span>
-                  </a>
-                </div>
-              </div>
-              <div className="flex-shrink-0">
-                <div className="w-64 h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-xl flex items-center justify-center border border-gray-300">
-                  <div className="text-center">
-                    <FileText className="w-16 h-16 text-[#6B8E23] mx-auto mb-4" />
-                    <p className="text-gray-600 font-medium">PDF Preview</p>
-                    <p className="text-gray-500 text-sm">Click to view full catalogue</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
@@ -459,6 +421,47 @@ export default function Catalogue() {
                 </div>
               </div>
 
+            </div>
+          </div>
+
+          {/* Catalogue Download Section */}
+          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-8 rounded-2xl border border-gray-200 mb-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">NOVUSS MedTech Catalogue</h2>
+                <p className="text-gray-600 text-lg mb-6">
+                  Our comprehensive catalogue features the latest medical equipment, diagnostic systems, 
+                  and healthcare solutions designed to meet the evolving needs of modern healthcare facilities.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3 shadow-lg shadow-[#6B8E23]/30"
+                  >
+                    <Eye className="w-5 h-5" />
+                    <span>View Catalogue</span>
+                  </a>
+                  <a 
+                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
+                    download="NOVUSS_MedTech_Catalogue.pdf"
+                    className="border-2 border-[#6B8E23] hover:bg-[#6B8E23] hover:text-white text-[#6B8E23] px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3"
+                  >
+                    <Download className="w-5 h-5" />
+                    <span>Download PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div className="flex-shrink-0">
+                <div className="w-64 h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-xl flex items-center justify-center border border-gray-300">
+                  <div className="text-center">
+                    <FileText className="w-16 h-16 text-[#6B8E23] mx-auto mb-4" />
+                    <p className="text-gray-600 font-medium">PDF Preview</p>
+                    <p className="text-gray-500 text-sm">Click to view full catalogue</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

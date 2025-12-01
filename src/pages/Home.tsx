@@ -112,7 +112,7 @@ export default function Home() {
                   <span>Download Catalogue</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/contact" className="border-2 border-gray-300 hover:border-[#6B8E23]/60 hover:bg-[#6B8E23]/10 text-gray-800 px-10 py-5 font-medium transition-all backdrop-blur-sm">
+                <Link to="/schedule-demo" className="border-2 border-gray-300 hover:border-[#6B8E23]/60 hover:bg-[#6B8E23]/10 text-gray-800 px-10 py-5 font-medium transition-all backdrop-blur-sm">
                   Schedule Demo
                 </Link>
               </div>
