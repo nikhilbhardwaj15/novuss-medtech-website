@@ -154,17 +154,17 @@ export default function Catalogue() {
                 </div>
               </div>
 
-              {/* Respiratory Support Equipment */}
+              {/* Surgical & Specialized Instruments */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
                 <div className="h-48 overflow-hidden">
-                  <img src="/respiratory-support.jpg" alt="Respiratory Support" className="w-full h-full object-cover" />
+                  <img src="/surgical-instruments.jpg" alt="Surgical Instruments" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Respiratory Support</h3>
-                  <p className="text-gray-600 mb-4">Oxygen concentrators, BiPAP machines, CPAP machines, and ventilators for respiratory care.</p>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Surgical Instruments</h3>
+                  <p className="text-gray-600 mb-4">Surgical clamps, retractors, scissors, forceps, orthopedic sets, ENT, ophthalmic, and dental equipment.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#6B8E23] font-semibold">4 Products</span>
-                    <Link to="/categories/respiratory-support" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <span className="text-[#6B8E23] font-semibold">30+ Products</span>
+                    <Link to="/categories/surgical-instruments" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -188,17 +188,17 @@ export default function Catalogue() {
                 </div>
               </div>
 
-              {/* Surgical & Specialized Instruments */}
+              {/* Respiratory Support Equipment */}
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
                 <div className="h-48 overflow-hidden">
-                  <img src="/surgical-instruments.jpg" alt="Surgical Instruments" className="w-full h-full object-cover" />
+                  <img src="/respiratory-support.jpg" alt="Respiratory Support" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Surgical Instruments</h3>
-                  <p className="text-gray-600 mb-4">Surgical clamps, retractors, scissors, forceps, orthopedic sets, ENT, ophthalmic, and dental equipment.</p>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Respiratory Support</h3>
+                  <p className="text-gray-600 mb-4">Oxygen concentrators, BiPAP machines, CPAP machines, and ventilators for respiratory care.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#6B8E23] font-semibold">30+ Products</span>
-                    <Link to="/categories/surgical-instruments" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
+                    <span className="text-[#6B8E23] font-semibold">4 Products</span>
+                    <Link to="/categories/respiratory-support" className="bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors">
                       View All
                     </Link>
                   </div>
@@ -256,6 +256,47 @@ export default function Catalogue() {
                 </div>
               </div>
 
+            </div>
+          </div>
+
+          {/* Catalogue Download Section */}
+          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-8 rounded-2xl border border-gray-200 mb-16">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">NOVUSS MedTech Catalogue</h2>
+                <p className="text-gray-600 text-lg mb-6">
+                  Our comprehensive catalogue features the latest medical equipment, diagnostic systems, 
+                  and healthcare solutions designed to meet the evolving needs of modern healthcare facilities.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3 shadow-lg shadow-[#6B8E23]/30"
+                  >
+                    <Eye className="w-5 h-5" />
+                    <span>View Catalogue</span>
+                  </a>
+                  <a 
+                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
+                    download="NOVUSS_MedTech_Catalogue.pdf"
+                    className="border-2 border-[#6B8E23] hover:bg-[#6B8E23] hover:text-white text-[#6B8E23] px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3"
+                  >
+                    <Download className="w-5 h-5" />
+                    <span>Download PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div className="flex-shrink-0">
+                <div className="w-64 h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-xl flex items-center justify-center border border-gray-300">
+                  <div className="text-center">
+                    <FileText className="w-16 h-16 text-[#6B8E23] mx-auto mb-4" />
+                    <p className="text-gray-600 font-medium">PDF Preview</p>
+                    <p className="text-gray-500 text-sm">Click to view full catalogue</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -424,46 +465,7 @@ export default function Catalogue() {
             </div>
           </div>
 
-          {/* Catalogue Download Section */}
-          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-8 rounded-2xl border border-gray-200 mb-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">NOVUSS MedTech Catalogue</h2>
-                <p className="text-gray-600 text-lg mb-6">
-                  Our comprehensive catalogue features the latest medical equipment, diagnostic systems, 
-                  and healthcare solutions designed to meet the evolving needs of modern healthcare facilities.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3 shadow-lg shadow-[#6B8E23]/30"
-                  >
-                    <Eye className="w-5 h-5" />
-                    <span>View Catalogue</span>
-                  </a>
-                  <a 
-                    href="/1Novuss_MedTech_Catalogue_web_watermark.pdf" 
-                    download="NOVUSS_MedTech_Catalogue.pdf"
-                    className="border-2 border-[#6B8E23] hover:bg-[#6B8E23] hover:text-white text-[#6B8E23] px-8 py-4 font-semibold rounded-lg transition-all flex items-center space-x-3"
-                  >
-                    <Download className="w-5 h-5" />
-                    <span>Download PDF</span>
-                  </a>
-                </div>
-              </div>
-              <div className="flex-shrink-0">
-                <div className="w-64 h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-xl flex items-center justify-center border border-gray-300">
-                  <div className="text-center">
-                    <FileText className="w-16 h-16 text-[#6B8E23] mx-auto mb-4" />
-                    <p className="text-gray-600 font-medium">PDF Preview</p>
-                    <p className="text-gray-500 text-sm">Click to view full catalogue</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           <div className="bg-gradient-to-r from-[#6B8E23] to-[#808000] text-white p-12 rounded-2xl text-center">
             <h2 className="text-3xl font-bold mb-6">Need More Information?</h2>
