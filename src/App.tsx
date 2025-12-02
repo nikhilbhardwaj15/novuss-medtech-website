@@ -60,12 +60,11 @@ function HomePage() {
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-6">
+            <Link to="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</Link>
+            <a href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">Services</a>
             <div className="w-64">
               <SearchBar />
             </div>
-            <a href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">Services</a>
-            <Link to="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</Link>
             <Link to="/request-product" className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-2 transition-all shadow-lg shadow-[#6B8E23]/30">
               Request a Specific Product
             </Link>
@@ -95,9 +94,8 @@ function HomePage() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
             <div className="px-4 py-4 space-y-4">
-              <a href="#services" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
               <Link to="/about" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
-              <Link to="/contact" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              <a href="#services" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
               <Link to="/request-product" className="block w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-3 transition-all shadow-lg shadow-[#6B8E23]/30 text-center">
                 Request a Specific Product
               </Link>
