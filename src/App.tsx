@@ -1,6 +1,7 @@
-import { Activity, Stethoscope, Shield, Users, Phone, Mail, MapPin, ChevronRight, Zap, Cpu, Gauge, Menu, X } from 'lucide-react';
+import { Activity, Stethoscope, Shield, Users, Phone, Mail, MapPin, ChevronRight, Zap, Cpu, Gauge, Menu, X, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import SearchBar from './components/SearchBar';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
@@ -23,6 +24,7 @@ import RepairService from './pages/RepairService';
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -57,7 +59,10 @@ function HomePage() {
               <p className="text-xs text-gray-600 font-sans">MEDTECH INDUSTRIES</p>
             </div>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="w-64">
+              <SearchBar />
+            </div>
             <a href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">Services</a>
             <Link to="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</Link>
             <Link to="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</Link>
@@ -65,13 +70,28 @@ function HomePage() {
               Request a Specific Product
             </Link>
           </div>
-          <button 
-            className="md:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center space-x-2">
+            <button 
+              className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
+              onClick={() => setSearchOpen(!searchOpen)}
+            >
+              <Search className="w-5 h-5" />
+            </button>
+            <button 
+              className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
+        {searchOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
+            <div className="px-4 py-4">
+              <SearchBar onClose={() => setSearchOpen(false)} />
+            </div>
+          </div>
+        )}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
             <div className="px-4 py-4 space-y-4">
