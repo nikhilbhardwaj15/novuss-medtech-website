@@ -15,8 +15,10 @@ import RespiratorySupport from './pages/categories/RespiratorySupport';
 import CriticalCare from './pages/categories/CriticalCare';
 import EducationalEquipment from './pages/categories/EducationalEquipment';
 import HospitalSupplies from './pages/categories/HospitalSupplies';
+import RequestProduct from './pages/RequestProduct';
 import ScheduleDemo from './pages/ScheduleDemo';
 import RentalLeasing from './pages/RentalLeasing';
+import RepairService from './pages/RepairService';
 
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
@@ -59,8 +61,8 @@ function HomePage() {
             <a href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">Services</a>
             <Link to="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</Link>
             <Link to="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</Link>
-            <Link to="/contact" className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-2 transition-all shadow-lg shadow-[#6B8E23]/30">
-              Get Started
+            <Link to="/request-product" className="bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-2 transition-all shadow-lg shadow-[#6B8E23]/30">
+              Request a Specific Product
             </Link>
           </div>
           <button 
@@ -76,8 +78,8 @@ function HomePage() {
               <a href="#services" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
               <Link to="/about" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
               <Link to="/contact" className="block text-gray-700 hover:text-gray-900 transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-              <Link to="/contact" className="block w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-3 transition-all shadow-lg shadow-[#6B8E23]/30 text-center">
-                Get Started
+              <Link to="/request-product" className="block w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-3 transition-all shadow-lg shadow-[#6B8E23]/30 text-center">
+                Request a Specific Product
               </Link>
             </div>
           </div>
@@ -245,14 +247,14 @@ function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#6B8E23]/0 to-[#6B8E23]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/30 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B8E23]/40 transition-all">
-                  <Shield className="w-10 h-10 text-[#6B8E23]" />
+                  <Users className="w-10 h-10 text-[#6B8E23]" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-4 group-hover:text-[#6B8E23] transition-colors">Repair & Maintenance Services</h3>
+                <h3 className="text-3xl font-bold text-gray-800 mb-4 group-hover:text-[#6B8E23] transition-colors">Rental & Leasing Solutions</h3>
                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                  On-site repair, preventive maintenance, and calibration to ensure maximum uptime, precision, and safety — covering routine servicing, emergency fixes, and long-term equipment reliability.
+                  We provide short-term/ long-term rentals of some specific medical machines for general use as well, each unit fully serviced, quality-tested, and ready for safe, flexible operation.
                 </p>
-                <Link to="/contact" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
-                  <span>Request Service</span>
+                <Link to="/rental-leasing" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
+                  <span>Explore Rentals</span>
                   <ChevronRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -267,14 +269,14 @@ function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#6B8E23]/0 to-[#6B8E23]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-[#6B8E23]/30 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B8E23]/40 transition-all">
-                  <Users className="w-10 h-10 text-[#6B8E23]" />
+                  <Shield className="w-10 h-10 text-[#6B8E23]" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-4 group-hover:text-[#6B8E23] transition-colors">Rental & Leasing Solutions</h3>
+                <h3 className="text-3xl font-bold text-gray-800 mb-4 group-hover:text-[#6B8E23] transition-colors">Repair & Maintenance Services</h3>
                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                  We provide short-term/ long-term rentals of some specific medical machines for general use as well, each unit fully serviced, quality-tested, and ready for safe, flexible operation.
+                  On-site repair, preventive maintenance, and calibration to ensure maximum uptime, precision, and safety — covering routine servicing, emergency fixes, and long-term equipment reliability.
                 </p>
-                <Link to="/rental-leasing" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
-                  <span>Explore Rentals</span>
+                <Link to="/repair-service" className="text-[#6B8E23] font-semibold flex items-center space-x-2 group-hover:gap-4 transition-all">
+                  <span>Request Service</span>
                   <ChevronRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -488,8 +490,10 @@ function App() {
         <Route path="/categories/critical-care" element={<CriticalCare />} />
         <Route path="/categories/educational-equipment" element={<EducationalEquipment />} />
         <Route path="/categories/hospital-supplies" element={<HospitalSupplies />} />
+        <Route path="/request-product" element={<RequestProduct />} />
         <Route path="/schedule-demo" element={<ScheduleDemo />} />
         <Route path="/rental-leasing" element={<RentalLeasing />} />
+        <Route path="/repair-service" element={<RepairService />} />
       </Routes>
     </Router>
   );

@@ -51,21 +51,42 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
-              <Award className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">ISO Certified</h3>
-              <p className="text-gray-600">International quality standards and compliance certification ensuring the highest level of service excellence.</p>
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Certifications & Credentials</h2>
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center p-6 bg-gradient-to-br from-[#6B8E23]/10 to-white rounded-2xl border border-gray-200">
+                <Award className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-800 mb-3">ISO Certified</h3>
+                <p className="text-gray-600">International quality management standards certification ensuring consistent quality and customer satisfaction in all our services.</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-[#6B8E23]/10 to-white rounded-2xl border border-gray-200">
+                <Award className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-800 mb-3">MSME Registered</h3>
+                <p className="text-gray-600">Officially registered Micro, Small & Medium Enterprise supporting India's healthcare infrastructure development and innovation.</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-[#6B8E23]/10 to-white rounded-2xl border border-gray-200">
+                <Award className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-800 mb-3">GeM Approved</h3>
+                <p className="text-gray-600">Government e-Marketplace approved vendor for public sector healthcare institutions and government hospitals.</p>
+              </div>
             </div>
-            <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
-              <Users className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Expert Team</h3>
-              <p className="text-gray-600">Certified biomedical engineers and specialist technicians with decades of combined experience.</p>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
-              <Globe className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Nationwide Reach</h3>
-              <p className="text-gray-600">Serving healthcare institutions across India with 24/7 support and rapid response capabilities.</p>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
+                <Users className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Expert Team</h3>
+                <p className="text-gray-600">Certified biomedical engineers and specialist technicians with decades of combined experience.</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
+                <Globe className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Nationwide Reach</h3>
+                <p className="text-gray-600">Serving healthcare institutions across India with 24/7 support and rapid response capabilities.</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200">
+                <Heart className="w-12 h-12 text-[#6B8E23] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Quality Assurance</h3>
+                <p className="text-gray-600">Rigorous quality control processes and comprehensive warranty coverage on all products and services.</p>
+              </div>
             </div>
           </div>
 
