@@ -295,7 +295,7 @@ export default function RequestProduct() {
             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
               <CheckCircle className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
               <h3 className="font-bold text-gray-800 mb-2">Verified Vendor</h3>
-              <p className="text-sm text-gray-600">Network (Ambala / India)</p>
+              <p className="text-sm text-gray-600">Network (Haryana / India)</p>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
               <Clock className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
@@ -324,7 +324,7 @@ export default function RequestProduct() {
           {/* Footer Line */}
           <div className="text-center p-6 bg-gradient-to-br from-[#6B8E23]/10 to-white rounded-xl border border-gray-200">
             <p className="text-lg text-gray-700 font-medium">
-              We will confirm availability, pricing, and delivery timeline within 24 hours.
+              We will confirm availability, pricing, and delivery timeline within 1-2 business days.
             </p>
           </div>
         </div>
