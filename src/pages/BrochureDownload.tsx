@@ -130,7 +130,7 @@ export default function BrochureDownload() {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <Mail className="w-8 h-8 mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Email Us</h3>
-                <p className="opacity-90 text-sm">novussmedtechindustries@gmail.com</p>
+                <p className="opacity-90 text-xs break-all px-2">novussmedtechindustries@gmail.com</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <MapPin className="w-8 h-8 mx-auto mb-3" />
