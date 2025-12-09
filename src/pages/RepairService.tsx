@@ -75,8 +75,13 @@ export default function RepairService() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#6B8E23]/10 via-transparent to-transparent"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6B8E23]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#808000]/5 rounded-full blur-3xl"></div>
+      </div>
+      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200 rounded-b-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
             <ArrowLeft className="w-6 h-6 text-gray-700" />
@@ -92,17 +97,28 @@ export default function RepairService() {
         </div>
       </nav>
 
-      <div className="pt-24 pb-16 px-6">
+      <div className="pt-32 pb-16 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <Shield className="w-16 h-16 text-[#6B8E23] mx-auto mb-6" />
-            <h1 className="text-5xl font-bold text-gray-800 mb-6">Repair & Maintenance Services</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#6B8E23]/30 to-[#6B8E23]/10 text-[#6B8E23] text-sm font-medium mb-8 border border-[#6B8E23]/30 backdrop-blur-sm rounded-full">
+              <Shield className="w-4 h-4" />
+              <span>EXPERT SERVICE</span>
+            </div>
+            <h1 className="text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
+                Repair &
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-[#6B8E23] to-[#808000] bg-clip-text text-transparent">
+                Maintenance
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Professional repair and maintenance services for all medical equipment with certified technicians.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-8 rounded-2xl border border-gray-200 mb-12">
+          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-10 rounded-2xl border border-gray-200 mb-16 shadow-2xl shadow-[#6B8E23]/10 hover:shadow-[#6B8E23]/20 transition-all">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <Shield className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
@@ -122,7 +138,7 @@ export default function RepairService() {
             </div>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-10 shadow-2xl shadow-[#6B8E23]/10 hover:shadow-[#6B8E23]/20 transition-all">
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Request Repair Service</h2>
             
             <form onSubmit={handleSubmitRepair} className="space-y-6">
