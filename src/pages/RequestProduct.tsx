@@ -306,7 +306,7 @@ export default function RequestProduct() {
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
               <Shield className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
-              <h3 className="font-bold text-gray-800 mb-2">MSME Registered</h3>
+              <h3 className="font-bold text-gray-800 mb-2">GeM Registered</h3>
               <p className="text-sm text-gray-600">Supplier</p>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
@@ -322,7 +322,7 @@ export default function RequestProduct() {
             <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200">
               <MapPin className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
               <h3 className="font-bold text-gray-800 mb-2">Delivery Across</h3>
-              <p className="text-sm text-gray-600">North India</p>
+              <p className="text-sm text-gray-600">India</p>
             </div>
           </div>
 
