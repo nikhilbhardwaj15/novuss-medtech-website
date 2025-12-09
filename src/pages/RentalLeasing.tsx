@@ -181,7 +181,7 @@ export default function RentalLeasing() {
               <div>
                 <h4 className="font-bold text-gray-800 mb-3">Included Services:</h4>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• Free delivery and pickup</li>
+                  <li>• Free delivery and pickup (within 20km)</li>
                   <li>• Complete sanitization</li>
                   <li>• Technical support</li>
                   <li>• Maintenance during rental</li>

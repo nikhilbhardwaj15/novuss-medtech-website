@@ -324,10 +324,10 @@ function HomePage() {
                 </span>
               </h2>
               <p className="text-gray-600 text-xl leading-relaxed mb-6">
-                NOVUSS stands at the forefront of medical technology innovation, delivering reliable, state-of-the-art equipment and unmatched service excellence to healthcare facilities.
+                NOVUSS MedTech Industries specializes in comprehensive medical equipment supply, hospital machinery installation, biomedical equipment maintenance, and healthcare infrastructure solutions. We deliver laboratory equipment, diagnostic instruments, surgical tools, hospital furniture, respiratory support systems, critical care equipment, and educational apparatus to hospitals, clinics, research institutions, and medical colleges across India.
               </p>
               <p className="text-gray-600 text-xl leading-relaxed mb-10">
-                Our dedication to precision, safety protocols, and customer satisfaction has established us as the premier partner for healthcare providers nationwide.
+                From ECG machines and patient monitors to autoclaves, centrifuges, ventilators, and OT tables — we provide end-to-end medical equipment solutions including procurement, installation, calibration, preventive maintenance, repair services, and flexible rental/leasing options. Our ISO-certified operations ensure compliance with international healthcare standards while delivering cost-effective, reliable medical technology solutions.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 group">

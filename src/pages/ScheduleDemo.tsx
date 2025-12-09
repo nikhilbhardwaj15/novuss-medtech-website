@@ -85,8 +85,13 @@ export default function ScheduleDemo() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#6B8E23]/10 via-transparent to-transparent"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6B8E23]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#808000]/5 rounded-full blur-3xl"></div>
+      </div>
+      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200 rounded-b-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
             <ArrowLeft className="w-6 h-6 text-gray-700" />
@@ -102,17 +107,28 @@ export default function ScheduleDemo() {
         </div>
       </nav>
 
-      <div className="pt-24 pb-16 px-6">
+      <div className="pt-32 pb-16 px-6 relative z-10">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <Calendar className="w-16 h-16 text-[#6B8E23] mx-auto mb-6" />
-            <h1 className="text-5xl font-bold text-gray-800 mb-6">Schedule a Demo</h1>
-            <p className="text-xl text-gray-600">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#6B8E23]/30 to-[#6B8E23]/10 text-[#6B8E23] text-sm font-medium mb-8 border border-[#6B8E23]/30 backdrop-blur-sm rounded-full">
+              <Calendar className="w-4 h-4" />
+              <span>BOOK YOUR DEMO</span>
+            </div>
+            <h1 className="text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
+                Schedule a
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-[#6B8E23] to-[#808000] bg-clip-text text-transparent">
+                Live Demo
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed">
               Book a personalized demonstration of our medical equipment with our experts.
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-8">
+          <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl shadow-2xl shadow-[#6B8E23]/10 p-8 hover:shadow-[#6B8E23]/20 transition-all">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
