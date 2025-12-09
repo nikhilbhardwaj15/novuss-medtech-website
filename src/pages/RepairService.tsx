@@ -118,25 +118,7 @@ export default function RepairService() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-10 rounded-2xl border border-gray-200 mb-16 shadow-2xl shadow-[#6B8E23]/10 hover:shadow-[#6B8E23]/20 transition-all">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div>
-                <Shield className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
-                <h3 className="font-bold text-gray-800 mb-2">Certified Technicians</h3>
-                <p className="text-gray-600 text-sm">Expert biomedical engineers and certified repair specialists</p>
-              </div>
-              <div>
-                <MessageCircle className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
-                <h3 className="font-bold text-gray-800 mb-2">24/7 Support</h3>
-                <p className="text-gray-600 text-sm">Emergency repair services available round the clock</p>
-              </div>
-              <div>
-                <Shield className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
-                <h3 className="font-bold text-gray-800 mb-2">Warranty Coverage</h3>
-                <p className="text-gray-600 text-sm">All repairs come with service warranty and quality assurance</p>
-              </div>
-            </div>
-          </div>
+
 
           <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-10 shadow-2xl shadow-[#6B8E23]/10 hover:shadow-[#6B8E23]/20 transition-all">
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Request Repair Service</h2>
@@ -193,21 +175,20 @@ export default function RepairService() {
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    When (Issue Started) *
+                    Preferred Date for Assessment *
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     required
                     value={formData.when}
                     onChange={(e) => setFormData(prev => ({ ...prev, when: e.target.value }))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
-                    placeholder="e.g., 2 days ago, last week"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Where (Location) *
+                    Equipment Location *
                   </label>
                   <input
                     type="text"
@@ -215,13 +196,13 @@ export default function RepairService() {
                     value={formData.where}
                     onChange={(e) => setFormData(prev => ({ ...prev, where: e.target.value }))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
-                    placeholder="Hospital/Clinic name & address"
+                    placeholder="Hospital/Clinic address"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Who (Contact Person) *
+                    Contact Person Name *
                   </label>
                   <input
                     type="text"
@@ -229,7 +210,7 @@ export default function RepairService() {
                     value={formData.who}
                     onChange={(e) => setFormData(prev => ({ ...prev, who: e.target.value }))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
-                    placeholder="Technician/Doctor name"
+                    placeholder="Contact person name"
                   />
                 </div>
               </div>
@@ -288,6 +269,26 @@ export default function RepairService() {
                 Submit Repair Request
               </button>
             </form>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#6B8E23]/10 to-white p-10 rounded-2xl border border-gray-200 mb-12 shadow-2xl shadow-[#6B8E23]/10 hover:shadow-[#6B8E23]/20 transition-all">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <Shield className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
+                <h3 className="font-bold text-gray-800 mb-2">Certified Technicians</h3>
+                <p className="text-gray-600 text-sm">Expert biomedical engineers and certified repair specialists</p>
+              </div>
+              <div>
+                <MessageCircle className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
+                <h3 className="font-bold text-gray-800 mb-2">24/7 Support</h3>
+                <p className="text-gray-600 text-sm">Emergency repair services available round the clock</p>
+              </div>
+              <div>
+                <Shield className="w-12 h-12 text-[#6B8E23] mx-auto mb-3" />
+                <h3 className="font-bold text-gray-800 mb-2">Warranty Coverage</h3>
+                <p className="text-gray-600 text-sm">All repairs come with service warranty and quality assurance</p>
+              </div>
+            </div>
           </div>
 
           <div className="mt-12 bg-gradient-to-r from-green-500 to-green-600 text-white p-8 rounded-2xl text-center">
