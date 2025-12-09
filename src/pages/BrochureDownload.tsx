@@ -125,17 +125,17 @@ export default function BrochureDownload() {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <Phone className="w-8 h-8 mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Call Us</h3>
-                <p className="opacity-90">+91 98765 43210</p>
+                <p className="opacity-90">+91 82649 89685</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <Mail className="w-8 h-8 mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Email Us</h3>
-                <p className="opacity-90">info@novussmedtech.com</p>
+                <p className="opacity-90 text-sm">novussmedtechindustries@gmail.com</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <MapPin className="w-8 h-8 mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Visit Us</h3>
-                <p className="opacity-90">Mumbai, Maharashtra</p>
+                <p className="opacity-90">Panchkula, India</p>
               </div>
             </div>
           </div>
