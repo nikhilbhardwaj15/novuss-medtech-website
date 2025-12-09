@@ -153,15 +153,16 @@ function HomePage() {
               </div>
             </div>
             <div
-              className="relative"
+              className="relative cursor-pointer"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               style={{
                 transform: window.innerWidth > 768 ? `translateY(${Math.sin(scrollY * 0.001 + 1) * 12}px) scale(${1 + Math.sin(scrollY * 0.0005) * 0.06})` : 'none',
                 transition: window.innerWidth > 768 ? 'transform 0.1s ease-out' : 'none'
               }}
             >
-              <div className="relative">
+              <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#6B8E23]/40 via-[#808000]/20 to-transparent rounded-2xl blur-3xl"></div>
-                <div className="relative aspect-square border border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-50 to-white backdrop-blur-sm">
+                <div className="relative aspect-square border border-gray-200 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-50 to-white backdrop-blur-sm group-hover:border-[#6B8E23]/50 transition-all">
                   <div className="absolute inset-0 grid grid-cols-3 gap-4 p-8">
                     <div className="bg-gradient-to-br from-[#6B8E23]/20 to-transparent border border-[#6B8E23]/20 rounded-lg flex items-center justify-center backdrop-blur-sm hover:scale-105 transition-transform">
                       <Activity className="w-12 h-12 text-[#6B8E23]" />
@@ -191,7 +192,7 @@ function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
                 </div>
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-gradient-to-br from-gray-50 to-white border border-[#6B8E23]/30 p-8 rounded-xl backdrop-blur-xl shadow-2xl shadow-[#6B8E23]/20">
+              <div className="absolute -bottom-8 -right-8 bg-gradient-to-br from-gray-50 to-white border border-[#6B8E23]/30 p-8 rounded-xl backdrop-blur-xl shadow-2xl shadow-[#6B8E23]/20 group-hover:scale-105 transition-transform">
                 <div className="flex items-baseline space-x-2 mb-2">
                   <div className="text-[#6B8E23] text-5xl font-bold">500</div>
                   <div className="text-[#6B8E23] text-2xl font-bold">+</div>
