@@ -43,8 +43,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#6B8E23]/10 via-transparent to-transparent"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#6B8E23]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#808000]/5 rounded-full blur-3xl"></div>
+      </div>
+      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200 rounded-b-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
             <ArrowLeft className="w-6 h-6 text-gray-700" />
@@ -60,11 +65,23 @@ export default function Contact() {
         </div>
       </nav>
 
-      <div className="pt-24 pb-16 px-6">
+      <div className="pt-32 pb-16 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-gray-800 mb-6">Get in Touch</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#6B8E23]/30 to-[#6B8E23]/10 text-[#6B8E23] text-sm font-medium mb-8 border border-[#6B8E23]/30 backdrop-blur-sm rounded-full">
+              <Mail className="w-4 h-4" />
+              <span>CONNECT WITH US</span>
+            </div>
+            <h1 className="text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 bg-clip-text text-transparent">
+                Get in
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-[#6B8E23] to-[#808000] bg-clip-text text-transparent">
+                Touch
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Ready to transform your healthcare facility? Let's discuss your medical technology needs.
             </p>
           </div>
@@ -74,8 +91,8 @@ export default function Contact() {
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Contact Information</h2>
               
               <div className="space-y-8">
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23] to-[#808000] rounded-2xl flex items-center justify-center">
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23] to-[#808000] rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B8E23]/40 transition-all">
                     <Phone className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -85,8 +102,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23] to-[#808000] rounded-2xl flex items-center justify-center">
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23] to-[#808000] rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B8E23]/40 transition-all">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -96,8 +113,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23] to-[#808000] rounded-2xl flex items-center justify-center">
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23] to-[#808000] rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B8E23]/40 transition-all">
                     <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -108,7 +125,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-12 p-8 bg-gradient-to-br from-[#6B8E23]/10 to-white rounded-2xl">
+              <div className="mt-12 p-8 bg-gradient-to-br from-[#6B8E23]/10 to-white rounded-2xl border border-gray-200 shadow-xl hover:shadow-2xl transition-all">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Why Choose NOVUSS?</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center space-x-3">
@@ -131,7 +148,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-10 rounded-2xl border border-gray-200 shadow-2xl shadow-[#6B8E23]/10 hover:shadow-[#6B8E23]/20 transition-all">
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-16 h-16 text-[#6B8E23] mx-auto mb-6" />
