@@ -50,10 +50,10 @@ export default function RentalLeasing() {
     {
       title: 'Respiratory Support Equipment',
       products: [
-        { name: 'Oxygen Concentrator', image: '/Oxygen concentrator.png', dailyRate: '₹500', weeklyRate: '₹3,000', monthlyRate: '₹10,000' },
-        { name: 'BiPAP Machine', image: '/BiPAP Machine.jpg', dailyRate: '₹800', weeklyRate: '₹5,000', monthlyRate: '₹18,000' },
-        { name: 'CPAP Machine', image: '/Cpap.png', dailyRate: '₹600', weeklyRate: '₹3,500', monthlyRate: '₹12,000' },
-        { name: 'Ventilator', image: '/Ventilator.png', dailyRate: '₹2,000', weeklyRate: '₹12,000', monthlyRate: '₹45,000' }
+        { name: 'Oxygen Concentrator', image: '/Oxygen concentrator.png', dailyRate: '₹500', weeklyRate: '₹3,000', monthlyRate: '₹5,000' },
+        { name: 'BiPAP Machine', image: '/BiPAP Machine.jpg', dailyRate: '₹800', weeklyRate: '₹5,000', monthlyRate: '₹5,000' },
+        { name: 'CPAP Machine', image: '/Cpap.png', dailyRate: '₹600', weeklyRate: '₹3,500', monthlyRate: '₹4,000' },
+        { name: 'Ventilator', image: '/Ventilator.png', dailyRate: '₹2,000', weeklyRate: '₹12,000', monthlyRate: '₹29,000' }
       ]
     },
     {
@@ -109,8 +109,8 @@ export default function RentalLeasing() {
                 <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8 text-[#6B8E23]" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">Flexible Duration</h3>
-                <p className="text-gray-600">Daily, weekly, or monthly rental options to suit your needs.</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Monthly Rentals</h3>
+                <p className="text-gray-600">Monthly rental options with flexible terms to suit your needs.</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -149,14 +149,6 @@ export default function RentalLeasing() {
                         <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
                         <div className="space-y-1 mb-4">
                           <div className="flex justify-between text-sm">
-                            <span className="text-gray-600">Daily:</span>
-                            <span className="font-semibold text-[#6B8E23]">{product.dailyRate}</span>
-                          </div>
-                          <div className="flex justify-between text-sm">
-                            <span className="text-gray-600">Weekly:</span>
-                            <span className="font-semibold text-[#6B8E23]">{product.weeklyRate}</span>
-                          </div>
-                          <div className="flex justify-between text-sm">
                             <span className="text-gray-600">Monthly:</span>
                             <span className="font-semibold text-[#6B8E23]">{product.monthlyRate}</span>
                           </div>
@@ -193,7 +185,7 @@ export default function RentalLeasing() {
                 <ul className="space-y-2 text-gray-600">
                   <li>• Valid ID proof required</li>
                   <li>• Security deposit applicable</li>
-                  <li>• Minimum rental period: 1 day</li>
+                  <li>• Minimum rental period: 1 month</li>
                   <li>• Advance booking recommended</li>
                   <li>• Terms & conditions apply</li>
                 </ul>
@@ -284,9 +276,10 @@ export default function RentalLeasing() {
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent"
                   >
                     <option value="">Select duration</option>
-                    <option value="Daily">Daily</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Monthly">Monthly</option>
+                    <option value="1 Month">1 Month</option>
+                    <option value="3 Months">3 Months</option>
+                    <option value="6 Months">6 Months</option>
+                    <option value="12 Months">12 Months</option>
                     <option value="Custom">Custom Duration</option>
                   </select>
                 </div>

@@ -2,6 +2,9 @@ import { Activity, Stethoscope, Shield, Users, Phone, Mail, MapPin, ChevronRight
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
+import LazyImage from './components/LazyImage';
+import LazyContent from './components/LazyContent';
+import { sendEmail } from './utils/emailService';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
@@ -53,7 +56,7 @@ function HomePage() {
       <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200 rounded-b-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-10 sm:h-12 w-auto" />
+            <LazyImage src="/output-onlinepngtools.png" alt="NOVUSS" className="h-10 sm:h-12 w-auto" />
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-gray-800 font-sans">NOVUSS</h1>
               <p className="text-xs text-gray-600 font-sans">MEDTECH INDUSTRIES</p>
@@ -210,29 +213,30 @@ function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#6B8E23]/30 to-transparent"></div>
       </section>
 
-      <section id="services" className="relative py-32 px-6 bg-[#6B8E23]/30">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#6B8E23]/20 rounded-full blur-3xl"></div>
-        </div>
-        <div
-          className="max-w-7xl mx-auto relative z-10"
-          style={{
-            transform: window.innerWidth > 768 ? `translateY(${Math.sin(scrollY * 0.001 + 2) * 3}px)` : 'none',
-          }}
-        >
-          <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#6B8E23]/30 to-transparent text-[#6B8E23]/90 text-sm font-medium mb-6 border border-[#6B8E23]/30">
-              COMPREHENSIVE SOLUTIONS
-            </div>
-            <h2 className="text-5xl font-bold text-gray-800 mb-6">
-              <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Advanced Medical Systems
-              </span>
-            </h2>
-            <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-              Engineering excellence for modern healthcare facilities
-            </p>
+      <LazyContent delay={500}>
+        <section id="services" className="relative py-32 px-6 bg-[#6B8E23]/30">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#6B8E23]/20 rounded-full blur-3xl"></div>
           </div>
+          <div
+            className="max-w-7xl mx-auto relative z-10"
+            style={{
+              transform: window.innerWidth > 768 ? `translateY(${Math.sin(scrollY * 0.001 + 2) * 3}px)` : 'none',
+            }}
+          >
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#6B8E23]/30 to-transparent text-[#6B8E23]/90 text-sm font-medium mb-6 border border-[#6B8E23]/30">
+                COMPREHENSIVE SOLUTIONS
+              </div>
+              <h2 className="text-5xl font-bold text-gray-800 mb-6">
+                <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                  Advanced Medical Systems
+                </span>
+              </h2>
+              <p className="text-gray-600 text-xl max-w-2xl mx-auto">
+                Engineering excellence for modern healthcare facilities
+              </p>
+            </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div 
               className="relative bg-gradient-to-br from-white to-gray-50 border border-gray-200 p-10 rounded-2xl hover:border-[#6B8E23]/50 transition-all group overflow-hidden"
@@ -303,8 +307,10 @@ function HomePage() {
           </div>
         </div>
       </section>
+      </LazyContent>
 
-      <section id="about" className="relative pt-32 pb-8 px-6 overflow-hidden bg-gradient-to-b from-[#6B8E23]/30 to-white">
+      <LazyContent delay={700}>
+        <section id="about" className="relative pt-32 pb-8 px-6 overflow-hidden bg-gradient-to-b from-[#6B8E23]/30 to-white">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#6B8E23]/20 rounded-full blur-3xl"></div>
         </div>
@@ -376,8 +382,10 @@ function HomePage() {
           </div>
         </div>
       </section>
+      </LazyContent>
 
-      <section id="contact" className="relative pt-8 pb-32 px-6 bg-gradient-to-b from-white via-[#6B8E23]/10 to-[#1a2e1a] overflow-hidden">
+      <LazyContent delay={900}>
+        <section id="contact" className="relative pt-8 pb-32 px-6 bg-gradient-to-b from-white via-[#6B8E23]/10 to-[#1a2e1a] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6B8E23]/20 rounded-full blur-3xl"></div>
         </div>
@@ -428,11 +436,30 @@ function HomePage() {
               </div>
             </div>
             <div className="bg-gradient-to-br from-[#6B8E23]/20 to-white/90 p-6 sm:p-8 lg:p-10 rounded-2xl backdrop-blur-sm shadow-2xl shadow-[#6B8E23]/30">
-              <form className="space-y-4 sm:space-y-6">
+              <form className="space-y-4 sm:space-y-6" onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target as HTMLFormElement);
+                const emailData = {
+                  name: formData.get('name') as string,
+                  email: formData.get('email') as string,
+                  message: formData.get('message') as string,
+                  formType: 'contact' as const
+                };
+                
+                const success = await sendEmail(emailData);
+                if (success) {
+                  alert('Message sent successfully!');
+                  (e.target as HTMLFormElement).reset();
+                } else {
+                  alert('Failed to send message. Please try again.');
+                }
+              }}>
                 <div>
                   <label className="block bg-gradient-to-r from-[#6B8E23] to-gray-700 bg-clip-text text-transparent font-semibold mb-2 sm:mb-3 text-base sm:text-lg">Name</label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="w-full bg-white/80 border border-[#6B8E23]/30 text-gray-800 px-4 py-3 sm:px-5 sm:py-4 rounded-lg focus:outline-none focus:border-[#6B8E23] focus:ring-2 focus:ring-[#6B8E23]/20 transition-all text-sm sm:text-base"
                     placeholder="Your name"
                   />
@@ -441,6 +468,8 @@ function HomePage() {
                   <label className="block bg-gradient-to-r from-[#6B8E23] to-gray-700 bg-clip-text text-transparent font-semibold mb-2 sm:mb-3 text-base sm:text-lg">Email</label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="w-full bg-white/80 border border-[#6B8E23]/30 text-gray-800 px-4 py-3 sm:px-5 sm:py-4 rounded-lg focus:outline-none focus:border-[#6B8E23] focus:ring-2 focus:ring-[#6B8E23]/20 transition-all text-sm sm:text-base"
                     placeholder="your@email.com"
                   />
@@ -449,24 +478,31 @@ function HomePage() {
                   <label className="block bg-gradient-to-r from-[#6B8E23] to-gray-700 bg-clip-text text-transparent font-semibold mb-2 sm:mb-3 text-base sm:text-lg">Message</label>
                   <textarea
                     rows={4}
+                    name="message"
+                    required
                     className="w-full bg-white/80 border border-[#6B8E23]/30 text-gray-800 px-4 py-3 sm:px-5 sm:py-4 rounded-lg focus:outline-none focus:border-[#6B8E23] focus:ring-2 focus:ring-[#6B8E23]/20 transition-all resize-none text-sm sm:text-base"
                     placeholder="Tell us about your requirements"
                   ></textarea>
                 </div>
-                <Link to="/contact" className="block w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-4 sm:px-8 sm:py-5 font-semibold transition-all rounded-lg shadow-2xl shadow-[#6B8E23]/40 hover:shadow-[#6B8E23]/60 text-sm sm:text-base text-center">
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-[#6B8E23] to-[#808000] hover:from-[#556B2F] hover:to-[#6B8E23] text-white px-6 py-4 sm:px-8 sm:py-5 font-semibold transition-all rounded-lg shadow-2xl shadow-[#6B8E23]/40 hover:shadow-[#6B8E23]/60 text-sm sm:text-base"
+                >
                   Send Message
-                </Link>
+                </button>
               </form>
             </div>
           </div>
         </div>
       </section>
+      </LazyContent>
 
-      <footer className="py-16 px-6 bg-[#1a2e1a]">
+      <LazyContent delay={1100}>
+        <footer className="py-16 px-6 bg-[#1a2e1a]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center space-x-3">
-              <img src="/novusswobg.png" alt="NOVUSS" className="h-16 w-auto opacity-90" />
+              <LazyImage src="/novusswobg.png" alt="NOVUSS" className="h-16 w-auto opacity-90" />
               <div>
                 <h2 className="text-2xl font-bold text-white/90 font-sans">NOVUSS</h2>
                 <p className="text-xs text-white/60 font-sans">MEDTECH INDUSTRIES</p>
@@ -483,6 +519,7 @@ function HomePage() {
           </div>
         </div>
       </footer>
+      </LazyContent>
     </div>
   );
 }

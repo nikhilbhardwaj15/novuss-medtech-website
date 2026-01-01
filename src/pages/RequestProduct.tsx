@@ -1,6 +1,7 @@
 import { ArrowLeft, Upload, MessageCircle, Shield, CheckCircle, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 export default function RequestProduct() {
   const [formData, setFormData] = useState({
@@ -19,21 +20,33 @@ export default function RequestProduct() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Product request:', formData);
-    alert('Request submitted successfully! Our team will contact you within 24 hours.');
-    setFormData({
-      category: '',
-      productName: '',
-      description: '',
-      quantity: '',
-      budgetRange: '',
-      name: '',
-      institutionName: '',
-      city: '',
-      phoneNumber: '',
-      email: ''
-    });
-    setUploadedFile(null);
+    
+    const emailData = {
+      ...formData,
+      formType: 'product-request' as const,
+      uploadedFile: uploadedFile?.name || 'None'
+    };
+    
+    const success = await sendEmail(emailData);
+    
+    if (success) {
+      alert('Request submitted successfully! Our team will contact you within 24 hours.');
+      setFormData({
+        category: '',
+        productName: '',
+        description: '',
+        quantity: '',
+        budgetRange: '',
+        name: '',
+        institutionName: '',
+        city: '',
+        phoneNumber: '',
+        email: ''
+      });
+      setUploadedFile(null);
+    } else {
+      alert('Failed to submit request. Please try again or contact us directly.');
+    }
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {

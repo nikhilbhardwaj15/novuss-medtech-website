@@ -1,6 +1,7 @@
 import { ArrowLeft, Shield, X, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 export default function RepairService() {
   const [showRepairModal, setShowRepairModal] = useState(false);
@@ -53,19 +54,31 @@ export default function RepairService() {
 
   const handleSubmitRepair = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Repair request:', formData);
-    alert('Repair request submitted! Our team will contact you within 24 hours.');
-    setFormData({
-      productName: '',
-      otherProduct: '',
-      machineInfo: '',
-      when: '',
-      where: '',
-      who: '',
-      phoneNumber: '',
-      name: '',
-      email: ''
-    });
+    
+    const emailData = {
+      ...formData,
+      formType: 'repair-service' as const,
+      phone: formData.phoneNumber
+    };
+    
+    const success = await sendEmail(emailData);
+    
+    if (success) {
+      alert('Repair request submitted! Our team will contact you within 24 hours.');
+      setFormData({
+        productName: '',
+        otherProduct: '',
+        machineInfo: '',
+        when: '',
+        where: '',
+        who: '',
+        phoneNumber: '',
+        name: '',
+        email: ''
+      });
+    } else {
+      alert('Failed to submit request. Please try again or contact us directly.');
+    }
   };
 
   const handleWhatsApp = () => {
