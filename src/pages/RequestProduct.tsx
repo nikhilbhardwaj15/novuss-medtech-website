@@ -1,7 +1,6 @@
 import { ArrowLeft, Upload, MessageCircle, Shield, CheckCircle, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { sendEmail } from '../utils/emailService';
 
 export default function RequestProduct() {
   const [formData, setFormData] = useState({
@@ -21,15 +20,19 @@ export default function RequestProduct() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const emailData = {
-      ...formData,
-      formType: 'product-request' as const,
-      uploadedFile: uploadedFile?.name || 'None'
-    };
-    
-    const success = await sendEmail(emailData);
-    
-    if (success) {
+    try {
+      // Store product request locally
+      const productRequest = {
+        ...formData,
+        uploadedFile: uploadedFile?.name || 'None',
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString()
+      };
+      
+      const existingRequests = JSON.parse(localStorage.getItem('productRequests') || '[]');
+      existingRequests.push(productRequest);
+      localStorage.setItem('productRequests', JSON.stringify(existingRequests));
+      
       alert('Request submitted successfully! Our team will contact you within 24 hours.');
       setFormData({
         category: '',
@@ -44,8 +47,9 @@ export default function RequestProduct() {
         email: ''
       });
       setUploadedFile(null);
-    } else {
-      alert('Failed to submit request. Please try again or contact us directly.');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error submitting request. Please try again.');
     }
   };
 
