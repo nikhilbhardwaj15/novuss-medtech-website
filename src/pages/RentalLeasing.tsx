@@ -59,18 +59,23 @@ export default function RentalLeasing() {
     {
       title: 'Hospital Furniture & Infrastructure',
       products: [
-        { name: 'Manual Hospital Bed', image: '/Manual Hospital bed.png', dailyRate: '₹300', weeklyRate: '₹1,800', monthlyRate: '₹6,000' },
-        { name: 'ICU Bed', image: '/ICU Bed.png', dailyRate: '₹800', weeklyRate: '₹5,000', monthlyRate: '₹18,000' },
-        { name: 'Wheelchair', image: '/Wheelchair.png', dailyRate: '₹100', weeklyRate: '₹600', monthlyRate: '₹2,000' },
-        { name: 'Stretcher', image: '/Stretcher.png', dailyRate: '₹200', weeklyRate: '₹1,200', monthlyRate: '₹4,000' },
-        { name: 'Examination Table', image: '/Examination Table.jpg', dailyRate: '₹250', weeklyRate: '₹1,500', monthlyRate: '₹5,000' }
+        { name: 'Manual Hospital Bed', image: '/Manual Hospital bed.png', dailyRate: '₹100', weeklyRate: '₹600', monthlyRate: '₹3,000' },
+        { name: 'ICU Bed', image: '/ICU Bed.png', dailyRate: '₹220', weeklyRate: '₹1,300', monthlyRate: '₹6,500' },
+        { name: 'Wheelchair', image: '/Wheelchair.png', dailyRate: '₹50', weeklyRate: '₹300', monthlyRate: '₹1,500' },
+        { name: 'Examination Table', image: '/Examination Table.jpg', dailyRate: '₹50', weeklyRate: '₹300', monthlyRate: '₹1,500' }
       ]
     },
     {
       title: 'Medical Gas & Supplies',
       products: [
-        { name: 'Oxygen Cylinder', image: '/oxygen-cylinder.jpg', dailyRate: '₹150', weeklyRate: '₹900', monthlyRate: '₹3,000' },
-        { name: 'Heavy Duty Cylinder Trolley', image: '/Heavy duty cylinder trolley.jpg', dailyRate: '₹100', weeklyRate: '₹600', monthlyRate: '₹2,000' }
+        { name: 'Oxygen Cylinder', image: '/oxygen-cylinder.jpg', dailyRate: '₹85', weeklyRate: '₹500', monthlyRate: '₹2,500' },
+        { name: 'Cylinder Trolley', image: '/Heavy duty cylinder trolley.jpg', dailyRate: '₹70', weeklyRate: '₹400', monthlyRate: '₹2,000' }
+      ]
+    },
+    {
+      title: 'Can\'t Find Your Required Item?',
+      products: [
+        { name: 'Request Custom Rental', image: '/NOVUSS.png', isCustom: true }
       ]
     }
   ];
@@ -136,35 +141,60 @@ export default function RentalLeasing() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.products.map((product, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all group">
-                      <div className="relative h-48 overflow-hidden">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
-                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                          <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
-                        </div>
-                        <div className="absolute top-3 left-3 bg-[#6B8E23] text-white px-2 py-1 rounded text-xs font-medium">
-                          RENTAL
-                        </div>
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
-                        <div className="space-y-1 mb-4">
-                          <div className="flex justify-between text-sm">
-                            <span className="text-gray-600">Monthly:</span>
-                            <span className="font-semibold text-[#6B8E23]">{product.monthlyRate}</span>
+                      {product.isCustom ? (
+                        <div className="p-8 text-center">
+                          <div className="w-16 h-16 bg-gradient-to-br from-[#6B8E23]/20 to-[#6B8E23]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <MessageCircle className="w-8 h-8 text-[#6B8E23]" />
                           </div>
+                          <h3 className="font-bold text-gray-800 mb-3">{product.name}</h3>
+                          <p className="text-gray-600 text-sm mb-4">Tell us what medical equipment you need for rental</p>
+                          <button 
+                            onClick={() => handleGetRental('Custom Rental Request')}
+                            className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                          >
+                            Request Custom Rental
+                          </button>
                         </div>
-                        <button 
-                          onClick={() => handleGetRental(product.name)}
-                          className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
-                        >
-                          Request Rental
-                        </button>
-                      </div>
+                      ) : (
+                        <>
+                          <div className="relative h-48 overflow-hidden">
+                            <img src={product.image} alt={product.name} className="w-full h-full object-contain bg-gray-50" />
+                            <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                              <img src="/output-onlinepngtools.png" alt="NOVUSS" className="h-6 w-auto" />
+                            </div>
+                            <div className="absolute top-3 left-3 bg-[#6B8E23] text-white px-2 py-1 rounded text-xs font-medium">
+                              RENTAL
+                            </div>
+                          </div>
+                          <div className="p-4">
+                            <h3 className="font-bold text-gray-800 mb-2">{product.name}</h3>
+                            <div className="space-y-1 mb-4">
+                              <div className="flex justify-between text-sm">
+                                <span className="text-gray-600">Monthly:</span>
+                                <span className="font-semibold text-[#6B8E23]">{product.monthlyRate}</span>
+                              </div>
+                            </div>
+                            <button 
+                              onClick={() => handleGetRental(product.name)}
+                              className="w-full bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-[#556B2F] transition-colors text-sm font-medium"
+                            >
+                              Request Rental
+                            </button>
+                          </div>
+                        </>
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 bg-yellow-50 border border-yellow-200 p-6 rounded-2xl mb-8">
+            <h3 className="text-lg font-bold text-yellow-800 mb-3">📋 Pricing Disclaimer</h3>
+            <p className="text-yellow-700">
+              <strong>Note:</strong> The prices shown are average/base rental rates. Final pricing may vary based on specific requirements, brand preferences, higher variants, advanced features, or premium models. Contact us for exact quotations.
+            </p>
           </div>
 
           <div className="mt-16 bg-gradient-to-br from-[#6B8E23]/10 to-white p-8 rounded-2xl border border-gray-200">
