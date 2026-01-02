@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Shield, CheckCircle, X, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 export default function RentalLeasing() {
   const [showRentalModal, setShowRentalModal] = useState(false);
@@ -32,12 +33,22 @@ export default function RentalLeasing() {
     existingRentals.push(rentalRequest);
     localStorage.setItem('rentalRequests', JSON.stringify(existingRentals));
     
-    alert('Rental request submitted! Our team will contact you within 24 hours.');
+    // Send email
+    const emailData = {
+      ...formData,
+      formType: 'rental-request'
+    };
+    
+    const emailSent = await sendEmail(emailData);
+    
+    if (emailSent) {
+      alert('Rental request submitted! Our team will contact you within 24 hours.');
+    } else {
+      alert('Rental request submitted locally. We will contact you within 24 hours.');
+    }
+    
     setShowRentalModal(false);
     setFormData({ productName: '', rentalDuration: '', startDate: '', phoneNumber: '', name: '', email: '', address: '' });
-    setTimeout(() => {
-      alert('Thank you, we will get back to you!');
-    }, 100);
   };
 
   const getTomorrowDate = () => {

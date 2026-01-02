@@ -1,6 +1,7 @@
 import { ArrowLeft, Upload, MessageCircle, Shield, CheckCircle, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 export default function RequestProduct() {
   const [formData, setFormData] = useState({
@@ -33,7 +34,21 @@ export default function RequestProduct() {
       existingRequests.push(productRequest);
       localStorage.setItem('productRequests', JSON.stringify(existingRequests));
       
-      alert('Request submitted successfully! Our team will contact you within 24 hours.');
+      // Send email
+      const emailData = {
+        ...formData,
+        formType: 'product-request',
+        uploadedFile: uploadedFile?.name || 'None'
+      };
+      
+      const emailSent = await sendEmail(emailData);
+      
+      if (emailSent) {
+        alert('Request submitted successfully! Our team will contact you within 24 hours.');
+      } else {
+        alert('Request submitted locally. We will contact you within 24 hours.');
+      }
+      
       setFormData({
         category: '',
         productName: '',

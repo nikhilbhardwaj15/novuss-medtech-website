@@ -1,6 +1,7 @@
 import { ArrowLeft, Phone, Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,23 +17,34 @@ export default function Contact() {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Store in localStorage (simulating database)
-    const messages = JSON.parse(localStorage.getItem('novuss_messages') || '[]');
-    const newMessage = {
-      ...formData,
-      id: Date.now(),
-      timestamp: new Date().toISOString(),
-      status: 'new'
-    };
-    messages.push(newMessage);
-    localStorage.setItem('novuss_messages', JSON.stringify(messages));
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', company: '', message: '' });
+    try {
+      // Store in localStorage
+      const messages = JSON.parse(localStorage.getItem('novuss_messages') || '[]');
+      const newMessage = {
+        ...formData,
+        id: Date.now(),
+        timestamp: new Date().toISOString(),
+        status: 'new'
+      };
+      messages.push(newMessage);
+      localStorage.setItem('novuss_messages', JSON.stringify(messages));
+      
+      // Send email
+      const emailData = {
+        ...formData,
+        formType: 'contact-form'
+      };
+      
+      await sendEmail(emailData);
+      
+      setIsLoading(false);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (error) {
+      console.error('Error:', error);
+      setIsLoading(false);
+      alert('Error sending message. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

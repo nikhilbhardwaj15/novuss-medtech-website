@@ -1,6 +1,7 @@
 import { ArrowLeft, Download, FileText, Eye, Activity, FlaskConical, Shield, Microscope, X, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 // import { supabase } from '../lib/supabase';
 
 export default function Catalogue() {
@@ -20,7 +21,7 @@ export default function Catalogue() {
     setShowQuoteModal(true);
   };
 
-  const handleSubmitQuote = (e: React.FormEvent) => {
+  const handleSubmitQuote = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic form validation
@@ -54,7 +55,20 @@ export default function Catalogue() {
       existingQuotes.push(quoteRequest);
       localStorage.setItem('quoteRequests', JSON.stringify(existingQuotes));
       
-      alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
+      // Send email
+      const emailData = {
+        ...formData,
+        formType: 'quote-request'
+      };
+      
+      const emailSent = await sendEmail(emailData);
+      
+      if (emailSent) {
+        alert('Quote request submitted! Our team will contact you via WhatsApp soon.');
+      } else {
+        alert('Quote request submitted locally! Our team will contact you via WhatsApp soon.');
+      }
+      
       setShowQuoteModal(false);
       setFormData({ productName: '', quantity: '', phoneNumber: '', name: '', email: '', note: '' });
     } catch (error) {

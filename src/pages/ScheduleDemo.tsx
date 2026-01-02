@@ -1,6 +1,7 @@
 import { ArrowLeft, Calendar, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 export default function ScheduleDemo() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -34,7 +35,7 @@ export default function ScheduleDemo() {
     '04:00 PM - 05:00 PM'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Store demo request
@@ -47,6 +48,14 @@ export default function ScheduleDemo() {
     const existingDemos = JSON.parse(localStorage.getItem('demoRequests') || '[]');
     existingDemos.push(demoRequest);
     localStorage.setItem('demoRequests', JSON.stringify(existingDemos));
+    
+    // Send email
+    const emailData = {
+      ...formData,
+      formType: 'demo-request'
+    };
+    
+    await sendEmail(emailData);
     
     setCurrentStep(2);
   };

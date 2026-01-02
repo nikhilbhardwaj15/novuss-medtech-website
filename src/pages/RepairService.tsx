@@ -55,30 +55,41 @@ export default function RepairService() {
   const handleSubmitRepair = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const emailData = {
+    const repairRequest = {
       ...formData,
-      formType: 'repair-service' as const,
-      phone: formData.phoneNumber
+      timestamp: new Date().toISOString(),
+      id: Date.now().toString()
     };
     
-    const success = await sendEmail(emailData);
+    const existingRepairs = JSON.parse(localStorage.getItem('repairRequests') || '[]');
+    existingRepairs.push(repairRequest);
+    localStorage.setItem('repairRequests', JSON.stringify(existingRepairs));
     
-    if (success) {
-      alert('Repair request submitted! Our team will contact you within 24 hours.');
-      setFormData({
-        productName: '',
-        otherProduct: '',
-        machineInfo: '',
-        when: '',
-        where: '',
-        who: '',
-        phoneNumber: '',
-        name: '',
-        email: ''
-      });
+    // Send email
+    const emailData = {
+      ...formData,
+      formType: 'repair-request'
+    };
+    
+    const emailSent = await sendEmail(emailData);
+    
+    if (emailSent) {
+      alert('Repair request submitted! Our team will contact you within 2 hours.');
     } else {
-      alert('Failed to submit request. Please try again or contact us directly.');
+      alert('Repair request submitted locally. We will contact you within 2 hours.');
     }
+    
+    setFormData({
+      productName: '',
+      otherProduct: '',
+      machineInfo: '',
+      when: '',
+      where: '',
+      who: '',
+      phoneNumber: '',
+      name: '',
+      email: ''
+    });
   };
 
   const handleWhatsApp = () => {
