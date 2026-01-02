@@ -1,5 +1,10 @@
-// Email service using EmailJS
-// You need to sign up at https://www.emailjs.com/ and get your keys
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration
+// Replace these with your actual EmailJS credentials
+const EMAILJS_SERVICE_ID = 'service_novuss';
+const EMAILJS_TEMPLATE_ID = 'template_novuss';
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE';
 
 interface EmailData {
   formType: string;
@@ -8,19 +13,14 @@ interface EmailData {
 
 export const sendEmail = async (data: EmailData): Promise<boolean> => {
   try {
-    // EmailJS configuration - Replace with your actual keys
-    const SERVICE_ID = 'service_novuss'; // Replace with your EmailJS service ID
-    const TEMPLATE_ID = 'template_novuss'; // Replace with your EmailJS template ID  
-    const PUBLIC_KEY = 'your_public_key'; // Replace with your EmailJS public key
-
     // Format email content based on form type
     let emailContent = '';
+    let subject = '';
     
     switch (data.formType) {
       case 'product-request':
+        subject = '🏥 NEW PRODUCT REQUEST - NOVUSS MedTech';
         emailContent = `
-🏥 NEW PRODUCT REQUEST - NOVUSS MedTech
-
 📋 EQUIPMENT DETAILS:
 • Category: ${data.category}
 • Product Name: ${data.productName}
@@ -41,9 +41,8 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
         break;
 
       case 'rental-request':
+        subject = '🏥 NEW RENTAL REQUEST - NOVUSS MedTech';
         emailContent = `
-🏥 NEW RENTAL REQUEST - NOVUSS MedTech
-
 📋 RENTAL DETAILS:
 • Product: ${data.productName}
 • Duration: ${data.rentalDuration}
@@ -60,9 +59,8 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
         break;
 
       case 'repair-request':
+        subject = '🏥 NEW REPAIR REQUEST - NOVUSS MedTech';
         emailContent = `
-🏥 NEW REPAIR REQUEST - NOVUSS MedTech
-
 📋 REPAIR DETAILS:
 • Equipment: ${data.productName}
 • Other Equipment: ${data.otherProduct || 'N/A'}
@@ -81,9 +79,8 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
         break;
 
       case 'demo-request':
+        subject = '🏥 NEW DEMO REQUEST - NOVUSS MedTech';
         emailContent = `
-🏥 NEW DEMO REQUEST - NOVUSS MedTech
-
 📋 DEMO DETAILS:
 • Product Category: ${data.product}
 • Date: ${data.date}
@@ -100,9 +97,8 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
         break;
 
       case 'quote-request':
+        subject = '🏥 NEW QUOTE REQUEST - NOVUSS MedTech';
         emailContent = `
-🏥 NEW QUOTE REQUEST - NOVUSS MedTech
-
 📋 QUOTE DETAILS:
 • Product: ${data.productName}
 • Quantity: ${data.quantity}
@@ -118,9 +114,8 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
         break;
 
       case 'contact-form':
+        subject = '🏥 NEW CONTACT MESSAGE - NOVUSS MedTech';
         emailContent = `
-🏥 NEW CONTACT MESSAGE - NOVUSS MedTech
-
 📋 MESSAGE DETAILS:
 • Company: ${data.company || 'Not specified'}
 • Message: ${data.message}
@@ -134,9 +129,8 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
         break;
 
       default:
+        subject = '🏥 NEW FORM SUBMISSION - NOVUSS MedTech';
         emailContent = `
-🏥 NEW FORM SUBMISSION - NOVUSS MedTech
-
 📋 FORM DATA:
 ${Object.entries(data).map(([key, value]) => `• ${key}: ${value}`).join('\n')}
 
@@ -144,42 +138,24 @@ ${Object.entries(data).map(([key, value]) => `• ${key}: ${value}`).join('\n')}
         `;
     }
 
-    // For now, we'll use a simple fetch to a mock endpoint
-    // In production, replace this with actual EmailJS implementation
-    console.log('Email would be sent:', emailContent);
-    
-    // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    return true; // Return true for success
+    // Send email using EmailJS
+    const result = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        to_email: 'novussmedtechindustries@gmail.com',
+        subject: subject,
+        message: emailContent,
+        from_name: data.name || 'NOVUSS Website',
+        reply_to: data.email || 'noreply@novuss.com'
+      },
+      EMAILJS_PUBLIC_KEY
+    );
+
+    console.log('Email sent successfully:', result.text);
+    return true;
   } catch (error) {
     console.error('Email sending failed:', error);
     return false;
   }
 };
-
-// Instructions for setting up EmailJS:
-/*
-1. Go to https://www.emailjs.com/ and create a free account
-2. Create an email service (Gmail, Outlook, etc.)
-3. Create an email template with variables like {{message}}, {{from_name}}, etc.
-4. Get your Service ID, Template ID, and Public Key
-5. Replace the placeholder values above
-6. Install EmailJS: npm install @emailjs/browser
-7. Replace the mock implementation with actual EmailJS calls
-
-Example EmailJS implementation:
-import emailjs from '@emailjs/browser';
-
-const result = await emailjs.send(
-  SERVICE_ID,
-  TEMPLATE_ID,
-  {
-    message: emailContent,
-    to_email: 'novussmedtechindustries@gmail.com',
-    from_name: data.name || 'NOVUSS Website',
-    reply_to: data.email || 'noreply@novuss.com'
-  },
-  PUBLIC_KEY
-);
-*/
