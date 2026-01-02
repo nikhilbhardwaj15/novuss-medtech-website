@@ -1,10 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS Configuration
-// Replace these with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = 'service_novuss';
-const EMAILJS_TEMPLATE_ID = 'template_novuss';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE';
+const EMAILJS_SERVICE_ID = 'service_xmvimt1';
+const EMAILJS_TEMPLATE_ID = 'template_1wlvt4m';
+const EMAILJS_PUBLIC_KEY = 'Ao4_f7ePcPOCn6ZVI';
 
 interface EmailData {
   formType: string;
